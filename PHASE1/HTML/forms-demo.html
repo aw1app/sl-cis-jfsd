@@ -3,16 +3,46 @@
 
 <body>
     <h2>HTML Forms</h2>
-    <form action="process-user-reg.jsp" method="POST">
+    <form action="process-user-reg.jsp" method="GET">
         <label for="fname">First name:</label><br>
-        <input type="text" id="fname" name="fname" value="Rehmat"><br>
+        <input type="text" id="fname" name="fname" value="Rehmat" size="40"><br>
         <label for="lname">Last name:</label><br>
         <input type="text" id="lname" name="lname" value="kaur"><br><br>
-        
+
         <label for="lname">Choose a strong password:</label><br>
         <input type="password" id="passwd" name="passwd"><br><br>
-        
-        <input type="submit" value="Submit">
+
+        <br>
+        <label for=”colors”>Choose a color:</label>
+        <select id=”colors” name=”colors”>
+            <option value=”red”>Red</option>
+            <option value=”green”>Green</option>
+            <option value=”yellow”>Yellow</option>
+            <option value=”blue”>Blue</option>
+            <option value=”black”>Black</option>
+        </select>
+
+        <br><br>Choose languages you know:
+        <br>
+        <input type="checkbox" name="languages" value="HTML">HTML<br>
+        <input type="checkbox" name="languages" value="C#">C#<br>
+        <input type="checkbox" name="languages" value="Java">Java<br>
+
+        <br><br>Select the right option for gender:
+        <br>
+        <input type="radio" name="gender" value="male">Male<br>
+        <input type="radio" name="gender" value="female">Female<br>
+
+        <br><br><textarea rows="4" cols="80">
+•  Is never cached
+• Does not remain in the browser history
+• Cannot be bookmarked
+• Has no restrictions on data lengthT
+        </textarea>
+
+        <br><br><!--<input type="submit" value="Submit">-->
+        <button type="submit" value="Submit">Submit</button>
+        <button type="reset" value="Reset">Reset</button>
     </form>
 </body>
 
