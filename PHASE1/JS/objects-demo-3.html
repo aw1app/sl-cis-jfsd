@@ -20,6 +20,12 @@
                 this.price = price;
                 this.milage = milage;
             }
+
+            //methods
+            displayInfo(){
+              return "<br><b>CAR INFO</b> :<br>Name: " + this.name +  "<br> Price: " + this.price + " lakhs " 
+              + "<br>Milage: " + this.milage;
+            }
         }
 
         // Objects from class defn
@@ -43,14 +49,28 @@
     <img src="maruti.jpg" width="200" height="160">
     <p id="name1"> </p>
     <p id="price1"> </p>
+    <p id="info1"> </p>
 
     <script>
         document.getElementById("name1").innerText = car1.name;
         document.getElementById("price1").innerText = car1.price;
+
+        document.getElementById("info1").innerHTML = car1.displayInfo();
     </script>
 </body>
 
-CHALLENGE: Create a User class (name and age properties). Then create 2 user objects. 
+<br>
+<pre>CHALLENGE: Create a User class (name and age properties). Then create 2 user objects. 
+class User{
+    constructor(name,age){
+        this.name = name
+        this.age = age
+    }
+}
+let user1 = new User("Jon",24)
+let user2 = new User("Snow",33)
+
 Display them on the web page.
+</pre>
 
 </html>

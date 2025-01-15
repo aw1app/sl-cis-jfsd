@@ -16,7 +16,11 @@
         let car1 = {
             name: "Maruti",
             price: 5.25,
-            mileage: 40
+            mileage: 40,
+            displayInfo:function(){
+              return "<br><b>CAR INFO</b> :<br>Name: " + this.name +  "<br> Price: " + this.price + " lakhs " 
+              + "<br>Milage: " + this.milage;
+            }
         };
         let car2 = { name: "Toyota", price: 15.25, mileage: 70 };
 
@@ -37,10 +41,13 @@
     <img src="maruti.jpg" width="200" height="160">
     <p id="name1"> </p>
     <p id="price1"> </p>
+    <p id="info1"> </p>
+   
 
     <script>
         document.getElementById("name1").innerText = car1.name;
         document.getElementById("price1").innerText = car1.price;
+        document.getElementById("info1").innerHTML = car1.displayInfo();
     </script>
 </body>
 
