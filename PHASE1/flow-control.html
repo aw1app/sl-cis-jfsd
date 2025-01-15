@@ -1,11 +1,27 @@
 <!-- <script> -->
-    // demo while
+// demo while
 
-    let i = 10;
+let i = 10;
 
-    while (i < 15) {
-        console.log('i=' + i);
+while (i < 15) { console.log('i=' + i);
         i++;
+    }
+
+//While or for  with break statement\
+console.log("While or for  with break statement");
+    for (let j=0; j < 5;j++) {
+        console.log(' j=' + j);       
+    };
+
+    for (let j=0; j < 5;j++) {
+        if(j==3) break;
+        console.log(' j=' + j);       
+    }
+
+    for (let j=0; j < 5;j++) {
+        console.log('before j=' + j); 
+        if(j<3) continue;    
+        console.log('after j=' + j);       
     }
 
 
@@ -17,7 +33,7 @@
     let j = 10;
 
     do {
-        console.log('j=' + j);
+        console.log(' j=' + j);
         j++;
     } while (j < 15);
 
@@ -32,60 +48,34 @@
 
     switch (day) {
         case 0:
-            console.log('Today is Sunday.');
-            break;
-        case 1:
-            console.log('Today is Monday.');
-            break;
-        case 2:
-            console.log('Today is Tuesday.');
-            break;
-        case 3:
-            console.log('Today is Wednesday.');
-            break;
-        case 4:
-            console.log('Today is Thursday.');
-            break;
-        case 5:
-            console.log('Today is Friday.');
-            break;
-        case 6:
-            console.log('Today is Saturday.');
-            break;
-        default:
-            console.log('Invalid day.');
-    }
+            console.log(' Today is Sunday.'); break; case 1: console.log('Today is Monday.'); break; case 2:
+    console.log('Today is Tuesday.'); break; case 3: console.log('Today is Wednesday.'); break; case 4:
+    console.log('Today is Thursday.'); break; case 5: console.log('Today is Friday.'); break; case 6: console.log('Today
+    is Saturday.'); break; default: console.log('Invalid day.'); } <!-- </script> -->
 
-
-<!-- </script> -->
-
-<!-- <script> -->
-    console.log('DEMO FOR OF  ');
+    <!-- <script> -->
+    console.log('DEMO FOR OF ');
 
     const fruits = ['apple', 'banana', 'cherry'];
 
     for (fruit of fruits) {
-        console.log(fruit);
+    console.log(fruit);
     };
 
     console.log('\nDEMO normal FOR loop ');
-    for (let i=0; i< fruits.length; i++) {
-        console.log(fruits[i]);
-    }
+    for (let i=0; i< fruits.length; i++) { console.log(fruits[i]); } <!-- </script> -->
 
-<!-- </script> -->
+        <!-- <script> -->
+        // Define an object
+        const user1 = {
+        name: "John Doe",
+        age: 30,
+        profession: "Developer"
+        };
 
-<!-- <script> -->
-// Define an object
- const user1 = {
-   name: "John Doe",
-   age: 30,
-   profession: "Developer"
- };
- 
- // Use for...in to iterate over the properties
- for (let key in user1) {
-   console.log(`${key}: ${user1[key]}`);
- }
+        // Use for...in to iterate over the properties
+        for (let key in user1) {
+        console.log(`${key}: ${user1[key]}`);
+        }
 
- <!-- </script> -->
+        <!-- </script> -->
