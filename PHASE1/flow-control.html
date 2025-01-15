@@ -17,10 +17,8 @@
     let j = 10;
 
     do {
-
         console.log('j=' + j);
         j++;
-
     } while (j < 15);
 
 
@@ -60,3 +58,34 @@
 
 
 <!-- </script> -->
+
+<!-- <script> -->
+    console.log('DEMO FOR OF  ');
+
+    const fruits = ['apple', 'banana', 'cherry'];
+
+    for (fruit of fruits) {
+        console.log(fruit);
+    };
+
+    console.log('\nDEMO normal FOR loop ');
+    for (let i=0; i< fruits.length; i++) {
+        console.log(fruits[i]);
+    }
+
+<!-- </script> -->
+
+<!-- <script> -->
+// Define an object
+ const user1 = {
+   name: "John Doe",
+   age: 30,
+   profession: "Developer"
+ };
+ 
+ // Use for...in to iterate over the properties
+ for (let key in user1) {
+   console.log(`${key}: ${user1[key]}`);
+ }
+
+ <!-- </script> -->
