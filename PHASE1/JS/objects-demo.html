@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+    
+<head>
+    <div id="debugMessages">
+    </div>    
+    <script>
+        function displayLogMessage(message){
+        let debugMessagesDiv = document.getElementById("debugMessages");
+        debugMessagesDiv.innerHTML = debugMessagesDiv.textContent + "<br>" + message;
+        };        
+    </script>
+
+    <script>
+       function Car(name, price, milage){
+        this.name= name;
+        this.price= price;
+        this.milage= milage;
+       } 
+
+       // Objects from fuinction defn
+       let car1 = new Car("Maruti",5.25, 40);
+       let car2 = new Car("Toyota",15.25, 70);
+
+       displayLogMessage("Name of car1 "+ car1.name );
+       displayLogMessage("Price of car1 "+ car1.price + " lakhs " );
+
+       document.getElementById("name1").innerText = car1.name ;
+       document.getElementById("price1").innerText = car1.price ;
+    </script>
+</head>
+
+<body>
+    
+
+    <h1><center>Welcome to Amazonn Estore</center></h1>
+    <img src="maruti.jpg" width="200" height="160">
+    <p id="name1"> </p>
+    <p id="price1"> </p>
+    
+    <script>
+        document.getElementById("name1").innerText = car1.name ;
+        document.getElementById("price1").innerText = car1.price ;
+    </script>
+</body>
+
+</html>
