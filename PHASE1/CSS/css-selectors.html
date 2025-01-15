@@ -3,11 +3,7 @@
 
 <head>
     <style>
-        p,input{
-            color: rgb(244, 30, 30);
-            font-size: 20px;
-            text-align: right
-        }
+       
 
         h2 {
             text-align: center;
@@ -22,13 +18,41 @@
 
         .class1 {
             font-size: 10px;
-            color: rgb(230, 46, 199); 
+            color: rgb(230, 46, 199);
         }
 
-        input[type="password"]{
+        /* Attribute Selectors */
+        input[type="password"] {
             background: #39d2f4;
         }
 
+        [src="IMAGES/a.png"] {
+            background: #cbea4d;
+        }
+
+        [src] {
+            background: #cbea4d;
+        }
+
+        /* Grouping Selectors */  
+        p,
+        input {
+            color: rgb(244, 30, 30);
+            font-size: 20px;
+            text-align: right
+        }
+
+        /* Grouping Selectors : all p's at any level deep */ 
+        div p {
+            color: blue;
+            font-size: 80px;
+        }
+
+        /* Grouping Selectors : all p's at level 1 deep */ 
+        div > p {
+            color: blue;
+            font-size: 40px;
+        }
     </style>
 
 </head>
@@ -79,6 +103,12 @@
                 </td>
             </tr>
         </table>
+    </div>
+
+    <div>
+        <span>
+            <p>HELLO</p>
+        </span>
     </div>
 
 
