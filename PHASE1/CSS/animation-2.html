@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <style>
+        div {
+            width: 100px;
+            height: 100px;
+            background-color: red;
+            position: relative;
+            animation-name: example;
+            animation-duration: 5s;
+            animation-delay: 2s;
+        }
+
+        @keyframes example {
+            0% {
+                background-color: red;
+                left: 0px;
+                top: 0px;
+            }
+
+            25% {
+                background-color: blue;
+                left: 100px;
+                top: 0px;
+            }
+
+            50% {
+                background-color: orange;
+                left: 100px;
+                top: 100px;
+            }
+
+            75% {
+                background-color: green;
+                left: 0px;
+                top: 100px;
+            }
+
+            100% {
+                background-color: grey;
+                left: 0px;
+                top: 0px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <h3>Animation
+        properties</h3>
+    <p>
+    </p>
+    <div></div>
+</body>
+
+</html>
