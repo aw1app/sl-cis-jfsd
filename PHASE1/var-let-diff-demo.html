@@ -1,0 +1,32 @@
+<script>
+
+    let x1 = 10;
+
+    function f1(z) {
+
+        let x2 = 20;
+
+        console.log(x2); //?? 20
+
+        for (let i = 0; i < 1; i++) {
+            console.log(x2); //??  20
+            let x3 = 5;
+            console.log(x3); //?? 5
+
+            console.log("i="+i); //??  no error
+        };
+
+        console.log("i="+i); //?? error because i is block scoped variable
+
+        console.log(x3); //?? NO undefined, because x3 is also block scoped variable.
+
+        console.log(x2); //?? 
+    }
+
+
+    console.log(x2); //?? error undefined
+    console.log(x1); //?? 
+
+    f1(100);
+
+</script>

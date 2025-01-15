@@ -46,7 +46,7 @@
     <h1>
         <center>Welcome to Amazonn Estore</center>
     </h1>
-    <img src="maruti.jpg" width="200" height="160">
+    <img src="maruti.jpg" width="200" height="120">
     <p id="name1"> </p>
     <p id="price1"> </p>
     <p id="info1"> </p>
@@ -66,9 +66,12 @@ class User{
         this.name = name
         this.age = age
     }
+
+    isAdult() { return this.age >= 18; }
 }
 let user1 = new User("Jon",24)
-let user2 = new User("Snow",33)
+let user2 = new User("Snow",33);
+let user2IsAdult = user2.isAdult();
 
 Display them on the web page.
 
