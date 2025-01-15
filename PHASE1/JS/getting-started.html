@@ -1,27 +1,39 @@
 <!DOCTYPE html>
-    <html>
+<html>
 
-    <head>
-        <script>
-            let hello;
-            hello = "Hello User!! Welcome to XYZ Page";
+<head>
+    <script>
+        let hello;
+        hello = "Hello User!! Welcome to XYZ Page";
 
-            //alert(hello);
-            console.log(hello);
+        //alert(hello);
+        console.log(hello);
 
-            function add(x,y){
-                let z=x+y;
-                return z;
-            }
+        function add(x, y) {
+            let z = x + y;
+            return z;
+        }
 
-           let result = add(3,4);
-           console.log('RESULT is', result);
+        let result = add(3, 4);
+        console.log('RESULT is', result);
+    </script>
+</head>
 
-        </script>
-    </head>
+<body>
+    <div id="debugMessages">
+    </div>
 
-    <body>
-        <h1>Welcome to Amazonn Estore</h1>
-    </body>
+    <h1><center>Welcome to Amazonn Estore</center></h1>
 
-    </html>
+    <script>
+        function displayLogMessage(message){
+        let debugMessagesDiv = document.getElementById("debugMessages");
+        debugMessagesDiv.innerHTML = debugMessagesDiv.textContent + "<br>" + message;
+        };
+
+        let mess = 'RESULT is ' + result;
+        displayLogMessage(mess);
+    </script>
+</body>
+
+</html>
