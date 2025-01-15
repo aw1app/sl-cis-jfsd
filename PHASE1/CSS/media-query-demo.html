@@ -1,31 +1,68 @@
 <!DOCTYPE html>
-<html>
-
+<html lang="en">
 <head>
-    <style>
-        body {
-           background-color: green;
-        }
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Screen and Print Demo</title>
+  <style>
+    /* Screen-specific styles */
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f0f0f0;
+      color: #333;
+      margin: 20px;
+    }
+    header, footer {
+      background-color: #007BFF;
+      color: white;
+      padding: 10px;
+      text-align: center;
+    }
+    nav {
+      background-color: #333;
+      color: white;
+      padding: 10px;
+      text-align: center;
+    }
+    main {
+      padding: 20px;
+    }
+    .hidden-on-print {
+      display: block;
+    }
 
-        @media screen and (min-width:720px) {
-            body {
-                background-color: red;
-            }
-        }
-
-        @media print {
-            body {
-                background-color: rgb(211, 224, 156);
-            }
-        }
-    </style>
+    /* Print-specific styles */
+    @media print {
+      body {
+        background-color: rgb(237, 16, 16);
+        color: black;
+      }
+      header, footer {
+        background-color: white;
+        color: black;
+        text-align: left;
+      }
+      nav, .hidden-on-print {
+        display: none;
+      }
+      main {
+        padding: 0;
+      }
+    }
+  </style>
 </head>
-
 <body>
-    <h3>Media query Min width</h3>
-    <p>
-        Hi
-    </p>
+  <header>
+    <h1>Screen and Print Demo</h1>
+  </header>
+  <nav class="hidden-on-print">
+    <p>Navigation Bar (Visible only on screen)</p>
+  </nav>
+  <main>
+    <p>This is the main content. It will be styled appropriately for both screen and print.</p>
+  </main>
+  <footer>
+    <p>Footer Section</p>
+  </footer>
 </body>
-
 </html>
