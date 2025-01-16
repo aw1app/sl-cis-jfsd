@@ -1,0 +1,1 @@
+let f2 = () => alert('Helloworld from a.js');
