@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { User } from '../../models/user';
 
 @Component({
   selector: 'user',
@@ -9,8 +10,10 @@ import { Component } from '@angular/core';
 })
 export class UserComponent {
 
-  name:string = "Tabrez";
-  age:number = 44;
+  // name:string = "Tabrez";
+  // age:number = 44;
+
+  user:User = new User("Shalini", 50, "Mumbai");
 
 }
 
