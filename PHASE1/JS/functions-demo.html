@@ -1,0 +1,70 @@
+<script>
+
+    function add(x, y) {
+        let z = x + y;
+        return z;
+    }
+
+    function add1(x, y=10) {
+        let z = x + y;
+        return z;
+    }
+
+    let a1 = add(4,5);
+
+    let a2 = add1(4,5);
+    let a3 = add1(4); // 14
+
+
+    // 
+    function f1() {
+        //
+    }
+
+    // Function can accept others functions as arguments
+    function f2( f ) {
+        //
+    }
+
+    // Function can return function as a return value
+    function f3() {
+        //
+    }
+
+    function f4() {
+        // ....
+        //....
+        return f3;
+    }
+
+    function f5(arg1) {
+        // ....
+        //....
+        function f100(){ /*..... */}
+        return f100;        
+    }
+
+</script>
+
+
+<script>
+
+    function frenchGreeting(name) {
+        console.log("Bonjour " + name);
+    }
+
+    function englishGreeting(name) {
+        console.log("Hello " + name);
+    };
+
+    function greet(f, name) {
+        f(name);
+    }
+
+
+    let IP_ADDR="FR";
+    if (IP_ADDR == "UK")
+        greet(englishGreeting, "Sudha"); // englishGreeting(name)
+    else if (IP_ADDR == "FR")
+        greet(frenchGreeting, "Sudha");
+</script>
