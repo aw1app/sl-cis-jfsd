@@ -34,7 +34,7 @@ console.log("STATEMENT 20");
 
 myPromise
 .then ( res => console.log(`result from the promise is ${res}`))
-.catch( err => console.log(err));
+.catch( err => console.log(`error from the promise is ${err}`));
 
 console.log(`STATEMENT 30 `);
 console.log("STATEMENT 40");
