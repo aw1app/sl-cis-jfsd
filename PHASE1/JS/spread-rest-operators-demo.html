@@ -1,0 +1,17 @@
+<script>
+
+    function add1(x, y, z) {
+        return x + y + z;
+    };
+
+    let add = (x, y, z) => x + y + z;
+
+    let ageArr = [2, 5, 7,14,3];
+
+
+    let r1 = add(ageArr[0],ageArr[1],ageArr[2]);
+    console.log("r1=",r1);
+
+    let r2 = add(...ageArr);
+    console.log("r2=",r2);
+</script>
