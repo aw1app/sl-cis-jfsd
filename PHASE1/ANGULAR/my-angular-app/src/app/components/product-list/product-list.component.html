@@ -50,7 +50,7 @@
         <label for="productPrice">Product Price:</label>
         <input id="productPrice" formControlName="productPrice" required>
 
-        <div *ngIf="productForm.get('productPrice')?.hasError('required')" class="error-message">Product Price is
+        <div *ngIf="productForm.get('productPrice')?.hasError('required')" class="error-message form-control ng-untouched ng-pristine ng-invalid">Product Price is
             required.</div>
         <div *ngIf="productForm.get('productPrice')?.hasError('pattern')" class="error-message">Product Price must
             be numeric.</div>
@@ -63,7 +63,7 @@
     <label for="inStock">In Stock:</label>
     <input type="checkbox" id="inStock" formControlName="inStock" />
   </div>
-  
+
 
     <button (click)="addProduct()" [disabled]="!productForm.valid">Add Product</button>
 
