@@ -5,11 +5,10 @@ Cart Items:  {{cart.length}}
 <!-- <user></user> -->
 
 <product name="HP Keyboard" [price]="1000" [inStock]="true" desc="Sturdy Keyboard"
- (addToCartEvent)="f1($event)" />
-<product name="HP Mouse" [price]="100" [inStock]="true" description="Sturdy Mouse" (addToCartEvent)="f1($event)"/>
-<product name="HP Laptop" [price]="100000" [inStock]="false" description="Sturdy Keyboard" (addToCartEvent)="f1($event)" />
-<product name="HP Monito" [price]="10000" [inStock]="true" description="Sturdy Keyboard" (<product name="HP Laptop" [price]="100000" [inStock]="false" description="Sturdy Keyboard" (addToCartEvent)="f1($event)" />
-)="f1($event)"/>
+ (addToCartEvent)="f1($event)"  (priceEvent)="f2($event)" />
+<product name="HP Mouse" [price]="100" [inStock]="true" description="Sturdy Mouse" (addToCartEvent)="f1($event)"  (priceEvent)="f2($event)" />
+<product name="HP Laptop" [price]="100000" [inStock]="false" description="Sturdy Keyboard" (addToCartEvent)="f1($event)"   (priceEvent)="f2($event)"/>
+<product name="HP Monito" [price]="10000" [inStock]="true" description="Sturdy Keyboard" (addToCartEvent)="f1($event)"  (priceEvent)="f2($event)" />
 
 <product-list ></product-list>
 

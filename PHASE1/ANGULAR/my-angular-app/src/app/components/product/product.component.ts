@@ -24,12 +24,19 @@ export class ProductComponent {
 
   @Output() addToCartEvent = new EventEmitter<Product>();
 
+  @Output() priceEvent = new EventEmitter<number>();
+
+
   // constructor(){
 
   // }
 
   onAddToCart() {
     this.addToCartEvent.emit(this.product);
+  }
+
+  onPriceEvent() {
+    this.priceEvent.emit(this.product.price);
   }
 
   // Life Cycle method

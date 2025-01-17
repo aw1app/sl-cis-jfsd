@@ -24,4 +24,11 @@ export class AppComponent {
     this.cart.push(evt);
   }
 
+  f2(evt:any):void{
+    alert('child called me by emitting priceEvent.');
+    alert('Product price  is ' + evt );
+  }
+
 }
+
+//  Challenge : How will pass a numerical data to the parent;
