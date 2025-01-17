@@ -61,7 +61,8 @@ export class ProductListComponent {
 
       {
         productName: ['', [Validators.required, Validators.minLength(3)]],
-        productPrice: ['', [Validators.required, Validators.pattern(/^\d+(\.\d{1,2})?$/), Validators.max(100000)]]
+        productPrice: ['', [Validators.required, Validators.pattern(/^\d+(\.\d{1,2})?$/), Validators.max(100000)]],
+        inStock: [true]
       }
 
     );
@@ -77,10 +78,11 @@ export class ProductListComponent {
     if (this.productForm.valid) {
       let name = this.productForm.get('productName')?.value;
       let price = this.productForm.get('productPrice')?.value;
+      let inStock = this.productForm.get('inStock')?.value;
 
       let id = this.getRandomInt(1000, 10000);
 
-      let tempProduct = new Product(id, name, price, '', true, '', 100);
+      let tempProduct = new Product(id, name, price, '', inStock, '', 100);
       this.products.push(tempProduct);
     } else {
       console.log("Add product failed!")
