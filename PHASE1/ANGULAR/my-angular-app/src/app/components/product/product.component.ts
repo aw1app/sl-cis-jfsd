@@ -19,8 +19,14 @@ export class ProductComponent {
   @Input("price") price!:number;
   @Input("inStock") inStock!:boolean;
 
+  
   product!: Product;
 
+  // constructor(){
+
+  // }
+
+  // Life Cycle method
   ngOnInit():void{
     this.product = new Product(1, this.name, this.price, this.description, this.inStock);
   }
