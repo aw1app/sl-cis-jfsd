@@ -22,14 +22,14 @@ export class ProductComponent {
   
   product!: Product;
 
-  @Output() addToCart = new EventEmitter<Product>();
+  @Output() addToCartEvent = new EventEmitter<Product>();
 
   // constructor(){
 
   // }
 
   onAddToCart() {
-    this.addToCart.emit(this.product);
+    this.addToCartEvent.emit(this.product);
   }
 
   // Life Cycle method
