@@ -16,7 +16,7 @@
             <th>Remove</th>
         </thead>
         <tr *ngFor="let prod of products; ; index as i;" [ngClass]="{'bk-grey': i%2==1}">
-            <td >{{i+1}}</td>
+            <td>{{i+1}}</td>
             <td [style.color]="prod.inStock ? 'red' : 'grey'">{{prod.name}}</td>
             <td [style.color]="prod.price <10000 ? 'grey' : 'orange'">{{prod.price + 1 }}</td>
             <td><img src="{{prod.imagePath}}" width="100" height="50"></td>
@@ -28,7 +28,40 @@
     </table>
 </div>
 
-<ng-template #elseBlock> No Products to display today </ng-template >
+<ng-template #elseBlock> No Products to display today </ng-template>
+
+<br><br>
+<h2>Add Product</h2>
+
+<form [formGroup]="productForm">
+
+    <div class="form-group">
+        <label for="productName">Product Name:</label>
+        <input id="productName" formControlName="productName" required>
+
+         <div *ngIf="productForm.get('productName')?.hasError('required')" 
+        class="error-message">Product Name is required.</div>
+        
+        <div *ngIf="productForm.get('productName')?.hasError('minlength')" 
+        class="error-message">Product Name must be at least 3 characters long.</div>
+    </div>
+
+    <div class="form-group">
+        <label for="productPrice">Product Price:</label>
+        <input id="productPrice" formControlName="productPrice" required>
+
+        <div *ngIf="productForm.get('productPrice')?.hasError('required')" class="error-message">Product Price is
+            required.</div>
+        <div *ngIf="productForm.get('productPrice')?.hasError('pattern')" class="error-message">Product Price must
+            be numeric.</div>
+        <div *ngIf="productForm.get('productPrice')?.hasError('max')" class="error-message">Product Price must be
+            less than 100000.</div>
+    </div>
+
+    <button (click)="addProduct()" [disabled]="!productForm.valid">Add Product</button>
 
 
-<button (click)="popOffProduct()" style="background-color: rgb(247, 118, 13);"> Remove the Product </button>
+</form>
+
+
+<!-- <button (click)="popOffProduct()" style="background-color: rgb(247, 118, 13);"> Remove the Product </button> -->
