@@ -2,6 +2,27 @@
 
 <p>List of Product at Amzn today</p>
 
-<ul *ngFor="let prod of products">
+<!-- <ul *ngFor="let prod of products">
     <li>{{prod.name}},{{prod.price}}</li>
-</ul>
+</ul> -->
+
+<table border="1">
+    <thead>
+        <th>Name</th>
+        <th>Price</th>
+        <th>Picture</th>
+        <th>Cart</th>
+        <th>Bid</th>
+        <th>Your Comments</th>
+    </thead>
+
+    <tr *ngFor="let prod of products">
+        <td [style.color]="prod.inStock ? 'red' : 'grey'" >{{prod.name}}</td>
+        <td [style.color]="prod.price <10000 ? 'grey' : 'orange'" >{{prod.price + 1 }}</td>
+        <td><img src="{{prod.imagePath}}" width="100" height="50"></td>
+       
+
+        
+    </tr>
+
+</table>
