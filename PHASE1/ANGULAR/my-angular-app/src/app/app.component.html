@@ -1,12 +1,14 @@
 
 <h1 style="text-align: center;" >Amazonn Estore </h1>
+Cart Items:  {{cart.length}}
 
 <!-- <user></user> -->
 
-<product name="HP Keyboard" [price]="1000" [inStock]="true" description="Sturdy Keyboard" />
-<product name="HP Mouse" [price]="100" [inStock]="true" description="Sturdy Mouse" />
-<product name="HP Laptop" [price]="100000" [inStock]="false" description="Sturdy Keyboard" />
-<product name="HP Monito" [price]="10000" [inStock]="true" description="Sturdy Keyboard" />
+<product name="HP Keyboard" [price]="1000" [inStock]="true" desc="Sturdy Keyboard"
+ (addToCart)="f1($event)" />
+<product name="HP Mouse" [price]="100" [inStock]="true" description="Sturdy Mouse" (addToCart)="f1($event)"/>
+<product name="HP Laptop" [price]="100000" [inStock]="false" description="Sturdy Keyboard" (addToCart)="f1($event)" />
+<product name="HP Monito" [price]="10000" [inStock]="true" description="Sturdy Keyboard" (addToCart)="f1($event)"/>
 
 <product-list ></product-list>
 

@@ -7,6 +7,7 @@ export class Product {
         public description: string='',
         public inStock:boolean=true,
         public imagePath:string='',
+        public bidAmount:number=0
       ) {
         
       }
