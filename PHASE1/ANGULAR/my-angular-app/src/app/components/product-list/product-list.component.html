@@ -6,6 +6,7 @@
     <li>{{prod.name}},{{prod.price}}</li>
 </ul> -->
 
+
 <table border="1">
     <thead>
         <th>Name</th>
@@ -19,10 +20,10 @@
     <tr *ngFor="let prod of products">
         <td [style.color]="prod.inStock ? 'red' : 'grey'" >{{prod.name}}</td>
         <td [style.color]="prod.price <10000 ? 'grey' : 'orange'" >{{prod.price + 1 }}</td>
-        <td><img src="{{prod.imagePath}}" width="100" height="50"></td>
-       
-
-        
+        <td><img src="{{prod.imagePath}}" width="100" height="50"></td>        
     </tr>
-
+    <tr></tr>
 </table>
+<button (click)="popOffProduct()" style="background-color: rgb(247, 118, 13);"> Remove the Product </button>
+
+
