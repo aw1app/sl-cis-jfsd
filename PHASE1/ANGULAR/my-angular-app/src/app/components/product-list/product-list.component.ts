@@ -11,6 +11,8 @@ import { CommonModule } from '@angular/common';
   styleUrl: './product-list.component.css'
 })
 export class ProductListComponent {
+  isFont40:boolean=true;
+  isFont80:boolean=false;
 
   products!:Product[];
 
