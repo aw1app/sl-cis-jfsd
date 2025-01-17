@@ -1,4 +1,4 @@
-<p>List of Product at Amzn today</p>
+<p [ngStyle]="{color:colOfTableTittle}">List of Product at Amzn today</p>
 
 <ul *ngFor="let prod of products">
     <li>{{prod}},{{prod.price + 5}}</li>
@@ -6,7 +6,7 @@
 
 <div *ngIf="products.length>0 ; else elseBlock">
     <table border="1">
-        <thead>
+        <thead [ngClass]="{'black-text-blue-border-green-bk':true}">
             <th>sl no</th>
             <th [class.class1]="isFont40">Name</th>
             <th [class.class2]="isFont80">Price</th>
@@ -15,10 +15,8 @@
             <th>Bid</th>
             <th>Remove</th>
         </thead>
-
-
-        <tr *ngFor="let prod of products; ; index as i;">
-            <td>{{i+1}}</td>
+        <tr *ngFor="let prod of products; ; index as i;" [ngClass]="{'bk-grey': i%2==1}">
+            <td >{{i+1}}</td>
             <td [style.color]="prod.inStock ? 'red' : 'grey'">{{prod.name}}</td>
             <td [style.color]="prod.price <10000 ? 'grey' : 'orange'">{{prod.price + 1 }}</td>
             <td><img src="{{prod.imagePath}}" width="100" height="50"></td>
@@ -26,9 +24,7 @@
             <td><button (click)="addToCart(prod)" [disabled]="!prod.inStock"> Add TO Cart </button> </td>
             <input type="number" [(ngModel)]="prod.bidAmount" />
             <td><button (click)="submitBid(prod)"> Submit Bid </button></td>
-
         </tr>
-        <tr></tr>
     </table>
 </div>
 

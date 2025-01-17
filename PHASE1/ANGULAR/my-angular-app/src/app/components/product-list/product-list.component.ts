@@ -12,6 +12,9 @@ import { FormsModule } from '@angular/forms';
   styleUrl: './product-list.component.css'
 })
 export class ProductListComponent {
+
+  colOfTableTittle:string="red";
+
   isFont40:boolean=true;
   isFont80:boolean=false;
 
@@ -21,10 +24,10 @@ export class ProductListComponent {
   constructor(){
     console.log("Hi");
     this.products= [];
-    // this.products.push(new Product(1, "HP Laptop",20000, "Gaming Laptop",true,"IMAGES/hp-laptop.jpg"));
-    // this.products.push(new Product(2, "Samsumg Laptop",40000, "Gaming Laptop",false,"IMAGES\hp.jpg"));
-    // this.products.push(new Product(3, "Lenova Laptop",20500, "Gaming Laptop",true,"IMAGES\hp.jpg"));
-    // this.products.push(new Product(3, "Sony Laptop",22000, "Gaming Laptop",true,"IMAGES\hp.jpg"));
+    this.products.push(new Product(1, "HP Laptop",20000, "Gaming Laptop",true,"IMAGES/hp-laptop.jpg"));
+    this.products.push(new Product(2, "Samsumg Laptop",40000, "Gaming Laptop",false,"IMAGES\hp.jpg"));
+    this.products.push(new Product(3, "Lenova Laptop",20500, "Gaming Laptop",true,"IMAGES\hp.jpg"));
+    this.products.push(new Product(3, "Sony Laptop",22000, "Gaming Laptop",true,"IMAGES\hp.jpg"));
   }
 
   submitBid(product: Product) {
