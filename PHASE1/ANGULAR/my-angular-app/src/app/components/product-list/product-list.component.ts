@@ -23,6 +23,12 @@ export class ProductListComponent {
     this.products.push(new Product(3, "Sony Laptop",22000, "Gaming Laptop",true,"IMAGES\hp.jpg"));
   }
 
+  removeProduct(prod:Product):void{
+    alert("Product " + prod.name + " will be removed!");
+    //this.products.find();
+  }
+
+
   popOffProduct():void{
     this.products.pop();
   }

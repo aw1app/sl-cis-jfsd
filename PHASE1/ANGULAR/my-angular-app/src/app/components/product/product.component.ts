@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import { Product } from '../../models/product';
 
 @Component({
@@ -8,7 +8,21 @@ import { Product } from '../../models/product';
   templateUrl: './product.component.html',
   styleUrl: './product.component.css'
 })
-export class ProductComponent {
+// export class ProductComponent {
 
-  product: Product = new Product(1, "HP Laptop",20000, "Gaming Laptop",true,"IMAGES\hp.jpg");
+//   product: Product = new Product(1, "HP Laptop",20000, "Gaming Laptop",true,"IMAGES\hp.jpg");
+// }
+
+export class ProductComponent {
+  @Input("name") name!:string;
+  @Input("description") description!:string;
+  @Input("price") price!:number;
+  @Input("inStock") inStock!:boolean;
+
+  product!: Product;
+
+  ngOnInit():void{
+    this.product = new Product(1, this.name, this.price, this.description, this.inStock);
+  }
+
 }
