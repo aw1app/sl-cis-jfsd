@@ -33,22 +33,23 @@ export class ProductService {
 }
   */
 export class ProductService {
-   //Shared Data
-   products: Product[] = [];
+  //Shared Data
+  products: Product[] = [];
 
-   apiBaseUrl:string = "http://localhost:3000/products"
+  apiBaseUrl: string = "http://localhost:3000/products"
 
 
 
-   constructor(private httpClt: HttpClient) {
-   }
+  constructor(private httpClt: HttpClient) {
+  }
 
-   getAllProducts():Observable<Product[]> {  
-    return this.httpClt.get<Product[]>(this.apiBaseUrl);   
-   }
+  //CRUD methods
+  getAllProducts(): Observable<Product[]> {
+    return this.httpClt.get<Product[]>(this.apiBaseUrl);
+  }
 
-   addProduct(prod:Product):void{
-    
-   }
+  addProduct(prod: Product): void {
+
+  }
 
 }

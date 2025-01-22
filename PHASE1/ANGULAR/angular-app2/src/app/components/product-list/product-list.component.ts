@@ -25,7 +25,6 @@ export class ProductListComponent {
     // this.products = this.productService.getAllProducts();
 
     this.productService.getAllProducts().subscribe(
-
       (response) => { this.products = response }
     );
 
