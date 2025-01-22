@@ -22,7 +22,15 @@ export class ProductListComponent {
   }
 
   ngOnInit():void {
-    this.products = this.productService.getAllProducts();
+    // this.products = this.productService.getAllProducts();
+
+    this.productService.getAllProducts().subscribe(
+
+      (response) => { this.products = response }
+    );
+
   }
+
+  
 
 }
