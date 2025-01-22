@@ -44,6 +44,15 @@
       "inStock": true,
       "imagePath": "",
       "bidAmount": 100
+    },
+    {
+      "id": 1674,
+      "name": "Dell Laptop",
+      "price": "10000",
+      "description": "",
+      "inStock": true,
+      "imagePath": "",
+      "bidAmount": 100
     }
   ]
 }
