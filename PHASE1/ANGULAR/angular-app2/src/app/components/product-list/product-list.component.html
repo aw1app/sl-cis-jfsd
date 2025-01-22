@@ -1,0 +1,31 @@
+<p>List of Product at Amzn today</p>
+
+<!-- <ul *ngFor="let prod of products">
+    <li>{{prod}},{{prod.price + 5}}</li>
+</ul> -->
+
+<div *ngIf="products.length>0 ; else elseBlock">
+    <table border="1">
+        <thead >
+            <th>sl no</th>
+            <th >Name</th>
+            <th >Price</th>
+            <th>Picture</th>
+            <th>Cart</th>
+            <th>Bid</th>
+            <th>Remove</th>
+        </thead>
+        <tr *ngFor="let prod of products; ; index as i;" [ngClass]="{'bk-grey': i%2==1}">
+            <td>{{i+1}}</td>
+            <td [style.color]="prod.inStock ? 'red' : 'grey'">{{prod.name}}</td>
+            <td [style.color]="prod.price <10000 ? 'grey' : 'orange'">{{prod.price + 1 }}</td>
+            <td><img src="{{prod.imagePath}}" width="100" height="50"></td>
+            <td><img src=[prod.imagePath] width="100" height="50"></td>
+            <!-- <td><button (click)="addToCart(prod)" [disabled]="!prod.inStock"> Add TO Cart </button> </td>
+            <input type="number" [(ngModel)]="prod.bidAmount" />
+            <td><button (click)="submitBid(prod)"> Submit Bid </button></td> -->
+        </tr>
+    </table>
+</div>
+
+<ng-template #elseBlock> No Products to display today </ng-template>
