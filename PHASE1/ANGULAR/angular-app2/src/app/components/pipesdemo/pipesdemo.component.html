@@ -1,0 +1,34 @@
+<div class="pipe-demo">
+    <h1>{{ title }}</h1>
+  
+    <h3>Built-in Pipes</h3>
+
+    <p><strong>Original Title:</strong> {{ title }}</p>
+
+    <p><strong>Uppercase:</strong> {{ title | uppercase }}</p>
+    <p><strong>Lowercase:</strong> {{ title | lowercase }}</p>
+
+    <p><strong>Date (Full):</strong> {{ today | date:'fullDate' }}</p>    
+    <p><strong>Date (Short):</strong> {{ today | date:'shortDate' }}</p>
+
+    <p><strong>Currency (USD):</strong> {{ price | currency:'USD' }}</p>
+    <p><strong>Percentage:</strong> {{ percentage | percent }}</p>
+
+    <p><strong>Slice (First 10 Characters of {{ longText }} ):</strong> {{ longText | slice:0:10 }}...</p>
+    <p><strong>JSON:</strong> {{ jsonData | json }}</p>
+  
+   
+  </div>
+
+  <h2>Product List (Using AsyncPipe)</h2>
+
+<div *ngIf="asyncProducts | async as products; else loading">
+  <ul>
+    <li *ngFor="let product of products">{{ product.name }}</li>
+  </ul>
+</div>
+
+<ng-template #loading>
+  <p>Loading products...</p>
+</ng-template>
+  
