@@ -6,25 +6,25 @@
       "price": 1000,
       "description": "DESDC 1",
       "inStock": true,
-      "imagePath": " ",
+      "imagePath": "images/111.png",
       "bidAmount": 0
     },
     {
       "id": "2",
-      "name": "HP 2",
+      "name": "iPhone",
       "price": 1000,
       "description": "DESDC 1",
       "inStock": true,
-      "imagePath": " ",
+      "imagePath": "images/iphone.png",
       "bidAmount": 0
     },
     {
       "id": "11",
-      "name": "HP 11",
+      "name": "HP Laptop",
       "price": 10600,
       "description": "DESDC 1",
       "inStock": true,
-      "imagePath": "'assets/images/apple.jpg'",
+      "imagePath": "",
       "bidAmount": 0
     },
     {
@@ -46,7 +46,7 @@
       "bidAmount": 100
     },
     {
-      "id": 1674,
+      "id": "1674",
       "name": "Dell Laptop",
       "price": "10000",
       "description": "",
@@ -55,7 +55,7 @@
       "bidAmount": 100
     },
     {
-      "id": 7826,
+      "id": "7826",
       "name": "HP Mouse",
       "price": "450",
       "description": "",
