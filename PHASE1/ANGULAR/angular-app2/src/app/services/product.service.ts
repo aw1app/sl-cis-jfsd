@@ -48,6 +48,10 @@ export class ProductService {
     return this.httpClt.get<Product[]>(this.apiBaseUrl);
   }
 
+  getProduct(id: string) :Observable<Product>{
+    return this.httpClt.get<Product>(this.apiBaseUrl+"/"+id); 
+  }
+
   addProduct(prod: Product): Observable<Product> {
     return this.httpClt.post<Product>(this.apiBaseUrl, prod);   
   }

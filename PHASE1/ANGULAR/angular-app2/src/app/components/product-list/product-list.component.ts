@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { ProductService } from '../../services/product.service';
 import { Product } from '../../models/product';
 import { CommonModule } from '@angular/common';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'product-list',
@@ -17,7 +18,7 @@ export class ProductListComponent {
 
   productService!:ProductService;
 
-  constructor(productService:ProductService){
+  constructor(productService:ProductService, private router: Router){
     this.productService = productService;
   }
 
@@ -28,6 +29,10 @@ export class ProductListComponent {
       (response) => { this.products = response }
     );
 
+  }
+
+  show(id:number):void{    
+      this.router.navigate(['details', id]); 
   }
 
   delete(id:number):void{

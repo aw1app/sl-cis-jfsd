@@ -1,7 +1,6 @@
 .horizontal-nav {
-    text-align: right;
     display: flex;
-    justify-content: space-around; /* Space items evenly */
+    justify-content: flex-end; 
     align-items: center; /* Vertically align items */
     background-color: #333; /* Dark background color */
     padding: 10px 20px; /* Padding for spacing */
