@@ -57,16 +57,13 @@
         <div *ngIf="productForm.get('productPrice')?.hasError('max')" class="error-message">Product Price must be
             less than 100000.</div>
     </div>
-
     <!-- In Stock Input -->
   <div class="form-group">
     <label for="inStock">In Stock:</label>
     <input type="checkbox" id="inStock" formControlName="inStock" />
   </div>
 
-
     <button (click)="addProduct()" [disabled]="!productForm.valid">Add Product</button>
-
 
 </form>
 
