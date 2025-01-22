@@ -20,7 +20,7 @@
             <td>{{i+1}}</td>
             <td [style.color]="prod.inStock ? 'red' : 'grey'">{{prod.name}}</td>
             <td [style.color]="prod.price <10000 ? 'grey' : 'orange'">{{prod.price + 1 }}</td>
-            <td><img src="/{{prod.imagePath}}" width="100" height="50"></td>
+            <td><img src="{{prod.imagePath}}" width="100" height="50"></td>
             <td><img [src]="prod.imagePath" width="100" height="50"></td>
             <td><button (click)="show(prod.id)" > DETAILS </button> </td>
             <td><button (click)="delete(prod.id)" > DELETE </button> </td>
