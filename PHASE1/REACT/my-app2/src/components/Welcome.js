@@ -1,12 +1,14 @@
 
 import { Component } from 'react';
 
-class Welcome extends Component{
+class Welcome extends Component {
 
-return (
+    render() {
 
-    <p>Hi</p>
-)
+        return (
+            <p>Hi</p>
+        );
+    }
 
 }
 
