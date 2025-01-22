@@ -52,4 +52,6 @@ export class ProductService {
     return this.httpClt.post<Product>(this.apiBaseUrl, prod);   
   }
 
+  //Task : Implement delete product
+
 }
