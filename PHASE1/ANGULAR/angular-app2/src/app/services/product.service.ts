@@ -48,8 +48,8 @@ export class ProductService {
     return this.httpClt.get<Product[]>(this.apiBaseUrl);
   }
 
-  addProduct(prod: Product): void {
-
+  addProduct(prod: Product): Observable<Product> {
+    return this.httpClt.post<Product>(this.apiBaseUrl, prod);   
   }
 
 }

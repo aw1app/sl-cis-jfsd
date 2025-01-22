@@ -1,42 +1,49 @@
 {
-    "products": [
-        {
-            "id": 1,
-            "name": "HP 1",
-            "price": 1000,
-            "description": "DESDC 1",
-            "inStock": true,
-            "imagePath": " ",
-            "bidAmount": 0
-        },
-        {
-            "id": 2,
-            "name": "HP 2",
-            "price": 1000,
-            "description": "DESDC 1",
-            "inStock": true,
-            "imagePath": " ",
-            "bidAmount": 0
-        }
-        ,
-        {
-            "id": 11,
-            "name": "HP 11",
-            "price": 10600,
-            "description": "DESDC 1",
-            "inStock": true,
-            "imagePath": " ",
-            "bidAmount": 0
-        }, {
-            "id": 41,
-            "name": "HP 41",
-            "price": 10500,
-            "description": "DESDC 41",
-            "inStock": true,
-            "imagePath": " ",
-            "bidAmount": 0
-        }
-    
-
-    ]
+  "products": [
+    {
+      "id": "1",
+      "name": "HP 1",
+      "price": 1000,
+      "description": "DESDC 1",
+      "inStock": true,
+      "imagePath": " ",
+      "bidAmount": 0
+    },
+    {
+      "id": "2",
+      "name": "HP 2",
+      "price": 1000,
+      "description": "DESDC 1",
+      "inStock": true,
+      "imagePath": " ",
+      "bidAmount": 0
+    },
+    {
+      "id": "11",
+      "name": "HP 11",
+      "price": 10600,
+      "description": "DESDC 1",
+      "inStock": true,
+      "imagePath": " ",
+      "bidAmount": 0
+    },
+    {
+      "id": "41",
+      "name": "HP 41",
+      "price": 10500,
+      "description": "DESDC 41",
+      "inStock": true,
+      "imagePath": " ",
+      "bidAmount": 0
+    },
+    {
+      "id": 3270,
+      "name": "Phillips TV",
+      "price": "10000",
+      "description": "",
+      "inStock": true,
+      "imagePath": "",
+      "bidAmount": 100
+    }
+  ]
 }

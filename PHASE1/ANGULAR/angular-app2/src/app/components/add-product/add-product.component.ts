@@ -41,6 +41,27 @@ export class AddProductComponent {
     return Math.floor(Math.random() * (maxFloored - minCeiled) + minCeiled); // The maximum is exclusive and the minimum is inclusive
   }
 
+  // addProduct(): void {
+  //   if (this.productForm.valid) {
+  //     console.log("Inside AddProduct Component addProduct() ");
+
+  //     let name = this.productForm.get('productName')?.value;
+  //     let price = this.productForm.get('productPrice')?.value;
+  //     let inStock = this.productForm.get('inStock')?.value;
+
+  //     let id = this.getRandomInt(1000, 10000);
+
+  //     let tempProduct = new Product(id, name, price, '', inStock, '', 100);
+
+  //     console.log(tempProduct);
+
+  //     this.productService.addProduct(tempProduct); // Using the product service
+  //   } else {
+  //     console.log("Add product failed!")
+  //   }
+  // }
+
+
   addProduct(): void {
     if (this.productForm.valid) {
       console.log("Inside AddProduct Component addProduct() ");
@@ -55,7 +76,12 @@ export class AddProductComponent {
 
       console.log(tempProduct);
 
-      this.productService.addProduct(tempProduct); // Using the product service
+      // Using the product service
+      this.productService.addProduct(tempProduct).subscribe(
+        (newProd) => console.log("Added a new product successfully! ", newProd.id)
+      ); 
+
+
     } else {
       console.log("Add product failed!")
     }
