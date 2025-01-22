@@ -33,10 +33,7 @@ export class PipesdemoComponent {
   }
 
   ngOnInit():void {
-    // this.products = this.productService.getAllProducts();
-
     this.asyncProducts=this.productService.getAllProducts();
-
   }
 
 }
