@@ -30,6 +30,9 @@ export class ProductListComponent {
 
   }
 
-  
+  delete(id:number):void{
+    console.log("INSIDE P LIST delete ", id);
+    this.productService.deleteProduct(id+"");
+  }
 
 }

@@ -52,6 +52,11 @@ export class ProductService {
     return this.httpClt.post<Product>(this.apiBaseUrl, prod);   
   }
 
-  //Task : Implement delete product
+  //Task-for-learners : Implement delete product
+  deleteProduct(id:string):Observable<void> {  
+    console.log("INSIDE P SERVICE  delete ", id);
+    return this.httpClt.delete<void>(this.apiBaseUrl+"/"+id);
+    console.log("INSIDE P SERVICE  after delete ", id);   
+  }
 
 }
