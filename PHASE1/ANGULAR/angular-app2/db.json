@@ -24,7 +24,7 @@
       "price": 10600,
       "description": "DESDC 1",
       "inStock": true,
-      "imagePath": " ",
+      "imagePath": "'assets/images/apple.jpg'",
       "bidAmount": 0
     },
     {
@@ -49,6 +49,15 @@
       "id": 1674,
       "name": "Dell Laptop",
       "price": "10000",
+      "description": "",
+      "inStock": true,
+      "imagePath": "",
+      "bidAmount": 100
+    },
+    {
+      "id": 7826,
+      "name": "HP Mouse",
+      "price": "450",
       "description": "",
       "inStock": true,
       "imagePath": "",

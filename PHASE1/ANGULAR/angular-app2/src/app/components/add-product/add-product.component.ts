@@ -3,6 +3,7 @@ import { FormBuilder, FormGroup, ReactiveFormsModule, Validators } from '@angula
 import { Product } from '../../models/product';
 import { CommonModule } from '@angular/common';
 import { ProductService } from '../../services/product.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'add-product',
@@ -16,7 +17,7 @@ export class AddProductComponent {
   productForm!: FormGroup;
   productService!:ProductService;
 
-  constructor(private fb: FormBuilder, productService:ProductService) {
+  constructor(private fb: FormBuilder, productService:ProductService, private router: Router) {
     this.productService=productService;
     //Add Product Form
     this.createAddForm(fb);
@@ -78,7 +79,10 @@ export class AddProductComponent {
 
       // Using the product service
       this.productService.addProduct(tempProduct).subscribe(
-        (newProd) => console.log("Added a new product successfully! ", newProd.id)
+        (newProd) => {
+          console.log("Added a new product successfully! ", newProd.id);
+          this.router.navigate(['list']);
+        }
       ); 
 
 
@@ -87,6 +91,6 @@ export class AddProductComponent {
     }
   }
 
-  
+
 
 }
