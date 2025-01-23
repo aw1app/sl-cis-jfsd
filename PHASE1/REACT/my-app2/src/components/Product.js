@@ -14,7 +14,8 @@ class Product extends Component {
 
         this.state = {
             name: this.props.name,
-            price: this.props.price
+            price: this.props.price,
+            quantity: 10
         };
 
         this.changeName = this.changeName.bind(this);
@@ -44,6 +45,7 @@ class Product extends Component {
 
             <h2> Name from State : { this.state.name }</h2>
             <h3> Price from State: { this.state.price }</h3>
+            <h3> Quantity from State: { this.state.quantity }</h3>
 
             <button onClick={this.changeName} > Click me to change state   name </button>
             <br/>
