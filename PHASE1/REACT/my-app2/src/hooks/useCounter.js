@@ -2,7 +2,7 @@
 import { useState } from 'react';
 
 //Our custom hook
-function useCounter(initialValue) {
+const useCounter = (initialValue) => {
 
     const [count, setCount] = useState(initialValue);
 
