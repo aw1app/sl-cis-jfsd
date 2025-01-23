@@ -2,8 +2,10 @@
 import './App.css';
 import Welcome from './components/Welcome';
 import Product from './components/Product';
+import ProductF from './components/ProductF';
 
-function App() {
+//function App { 
+const App = () => {
 
 
   return (
@@ -15,6 +17,8 @@ function App() {
       <Product name="Samsung Galaxy"  price="20000" />
 
       <Product name="HP Laptop"  price="25000" />
+
+      <ProductF name="Dell Mouse"  price="200" />
 
       <Welcome />
       

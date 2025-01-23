@@ -17,7 +17,7 @@ class Product extends Component {
     render(){
 
         return (
-            <div>
+            <div style={{'border-width':'2px','border-color':'blue'}}>
             <h2> Name : { this.productName }</h2>
             <h3> Price : { this.productPrice }</h3>
             </div>
