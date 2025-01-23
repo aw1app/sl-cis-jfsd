@@ -8,6 +8,7 @@ import EventHandlingDemo from './components/EventHandlingDemo';
 import ParentFunctionInPropsDemo from './components/ParentFunctionInPropsDemo';
 import Timer from './components/Timer';
 import DemoUseEffect from './components/DemoUseEffect'
+import DemoUseCounterHook from './DemoUseCounterHook';
 
 //function App { 
 const App = () => {
@@ -19,6 +20,8 @@ const App = () => {
 
   return (
     <div className="App">
+      <DemoUseCounterHook/>
+
       <DemoUseEffect />
 
       {/* <Timer/> */}
