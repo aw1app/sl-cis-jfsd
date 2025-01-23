@@ -9,7 +9,7 @@ const ProductF = (props) => {
 
 
     return (
-        <div style={{'border-width':'2px','border-color':'red'}}>
+        <div style={{border:"solid 1px", "border-color": 'red'} }>
         <h2> Name(F) : { productName }</h2>
         <h3> Price(F) : { productPrice }</h3>
         </div>
