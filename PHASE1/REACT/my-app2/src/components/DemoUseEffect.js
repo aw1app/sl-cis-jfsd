@@ -23,6 +23,15 @@ const DemoUseEffect = () => {
         [y]
     );
 
+    useEffect(
+        
+        () => {
+        console.log(`3 INSIDE USE EFFECT`);
+        }, 
+    
+        []
+    );
+
     const handleXChange = () => {
         setX(x + 5);
     }
