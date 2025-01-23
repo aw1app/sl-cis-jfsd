@@ -18,5 +18,4 @@ const DemoUseCounterHook = () =>{
     )
 };
 
-
 export default DemoUseCounterHook;

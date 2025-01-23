@@ -1,5 +1,6 @@
 // import logo from './logo.svg';
 import './App.css';
+import './NavBar.css';
 import Welcome from './components/Welcome';
 import Product from './components/Product';
 import ProductF from './components/ProductF';
@@ -11,40 +12,36 @@ import DemoUseEffect from './components/DemoUseEffect'
 import DemoUseCounterHook from './DemoUseCounterHook';
 
 import { BrowserRouter as Router, Route, Routes, Link, useParams } from 'react-router-dom';
+import NavBar from './components/NavBar';
 
 //function App { 
-const App = () => {
+const AppWithRouting = () => {
 
-  const myFunc=()=>{
+  const myFunc = () => {
     alert("Hi from Parent!")
   };
 
 
   return (
-    <div className="App">
-      <DemoUseCounterHook/>
+    <Router>
+      <div className="App">
 
-      <DemoUseEffect />
+        <h1 style={{ textAlign: 'center' }}>Amzn Product Management</h1>
+        <NavBar/>
 
-      {/* <Timer/> */}
-      <ParentFunctionInPropsDemo pf1={myFunc} />
-      <h1 >
-        Welcome to Amazon EStore
-      </h1>
-      <EventHandlingDemo></EventHandlingDemo>
-      <ProductList />
+        {/* Routes for different views */}
+        <Routes>
+          <Route path="/" element={null} />
+          <Route path="/list-products" element={<ProductList />} />
+          <Route path="/welcome" element={<Welcome />} />
+          <Route path="/timer" element={<Timer />} />
+          <Route path="/product" element={<Product />} />          
+        </Routes>
 
-      <Product name="Samsung Galaxy"  price="20000" />
-
-      <Product name="HP Laptop"  price="25000" />
-
-      <ProductF name="Dell Mouse"  price="200" />
-
-      <Welcome />
-      
-    </div>
+      </div>
+    </Router>
   );
 
 }
 
-export default App;
+export default AppWithRouting;
