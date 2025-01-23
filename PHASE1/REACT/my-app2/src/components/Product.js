@@ -19,10 +19,12 @@ class Product extends Component {
         };
 
         this.changeName = this.changeName.bind(this);
-        this.changeNameOfInstacnceVar = this.changeNameOfInstacnceVar.bind(this);
+
+        // changeNameOfInstacnceVar is an arrow function so no binding is required
+        //this.changeNameOfInstacnceVar = this.changeNameOfInstacnceVar.bind(this);
     }
 
-    changeNameOfInstacnceVar(){
+    changeNameOfInstacnceVar = () =>{
         alert("INSIDE changeNameOfInstacnceVar method");
         this.productName = "HAHA 2";
         console.log("this.productName = ", this.productName);
