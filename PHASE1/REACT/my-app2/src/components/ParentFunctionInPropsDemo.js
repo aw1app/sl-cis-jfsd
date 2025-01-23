@@ -18,7 +18,7 @@ class ParentFunctionInPropsDemo  extends  Component{
     render(){
 
         return (
-            <div style={{border:"solid 2px", "border-color": 'green'} }> 
+            <div style={{border:"solid 2px", "border-color": 'purple'} }> 
             <button onClick={this.g} >Call G (which will in turn call f1 )  </button>            
             </div>
         )
