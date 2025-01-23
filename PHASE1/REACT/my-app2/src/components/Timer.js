@@ -51,6 +51,7 @@ class Timer extends Component {
     // When the component is destroyed, this method will get called
     // Use this method for doing some clean up work
     componentWillUnmount() {
+        console.log("INSIDE componentWillUnmount");
         clearInterval(this.intervalId);
     }
 

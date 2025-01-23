@@ -7,6 +7,7 @@ import ProductList from './components/ProductList';
 import EventHandlingDemo from './components/EventHandlingDemo';
 import ParentFunctionInPropsDemo from './components/ParentFunctionInPropsDemo';
 import Timer from './components/Timer';
+import DemoUseEffect from './components/DemoUseEffect'
 
 //function App { 
 const App = () => {
@@ -18,7 +19,9 @@ const App = () => {
 
   return (
     <div className="App">
-      <Timer/>
+      <DemoUseEffect />
+
+      {/* <Timer/> */}
       <ParentFunctionInPropsDemo pf1={myFunc} />
       <h1 >
         Welcome to Amazon EStore
