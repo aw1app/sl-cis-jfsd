@@ -5,13 +5,19 @@ import Product from './components/Product';
 import ProductF from './components/ProductF';
 import ProductList from './components/ProductList';
 import EventHandlingDemo from './components/EventHandlingDemo';
+import ParentFunctionInPropsDemo from './components/ParentFunctionInPropsDemo';
 
 //function App { 
 const App = () => {
 
+  const myFunc=()=>{
+    alert("Hi from Parent!")
+  };
+
 
   return (
     <div className="App">
+      <ParentFunctionInPropsDemo pf1={myFunc} />
       <h1 >
         Welcome to Amazon EStore
       </h1>
