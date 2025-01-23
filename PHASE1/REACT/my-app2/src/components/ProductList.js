@@ -20,12 +20,12 @@ class ProductList extends Component {
 
     render() {
         return (
-            <div style={ {border:"solid 1px", "border-color": 'red'} } >
+            <div style={ {border:"solid 1px", "border-color": 'yellow'} } >
                 <h2>PRODUCT LIST COMPONENT</h2>
                 <table border="1">
-                    <th>NAME</th><th>PRICE</th><th> EDIT </th>
+                {this.state.products && <thead><th>NAME</th><th>PRICE</th><th> EDIT </th></thead> }
 
-                    {this.state.products.map( (product) => (
+                    {this.state.products && this.state.products.map( (product) => (
                         <tr> <td>{product.name}</td><td>{product.price}</td> 
                         <td> <button onClick={this.editProduct} >EDIT</button></td> </tr>
                     ))}

@@ -4,6 +4,7 @@ import Welcome from './components/Welcome';
 import Product from './components/Product';
 import ProductF from './components/ProductF';
 import ProductList from './components/ProductList';
+import EventHandlingDemo from './components/EventHandlingDemo';
 
 //function App { 
 const App = () => {
@@ -14,6 +15,7 @@ const App = () => {
       <h1 >
         Welcome to Amazon EStore
       </h1>
+      <EventHandlingDemo></EventHandlingDemo>
       <ProductList />
 
       <Product name="Samsung Galaxy"  price="20000" />

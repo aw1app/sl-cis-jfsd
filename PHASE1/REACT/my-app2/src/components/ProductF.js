@@ -1,19 +1,24 @@
 import { useState } from "react";
 
 
-const ProductF = (props) => {
+// const ProductF = (props) => {
+    const ProductF = ({name,price}) => { // Destructured props
 
-    let productName = props.name;
-    let productPrice = props.price;
+    // let productName = props.name;
+    // let productPrice = props.price;
 
-    let [name,setName] = useState('Bajaj TV');
-    let [price, setPrice] = useState(100);
+    // Destructured props
+    let productName = name;
+    let productPrice = price;
+
+    let [name1,setName1] = useState('Bajaj TV');
+    let [price1, setPrice1] = useState(100);
     let [inStock,setInStock] = useState(true);
 
     const changeName = () => {
         //alert("INSIDE changeName method of ProductF");    
         // name = " HA HA 3" ; 
-        setName(" HA HA 3");       
+        setName1(" HA HA 3");       
     };
 
     return (
@@ -21,8 +26,8 @@ const ProductF = (props) => {
             <h2> Name(F) : {productName}</h2>
             <h3> Price(F) : {productPrice}</h3>
 
-            <h2> Name from State : { name }</h2>
-            <h3> Price from State: { price }</h3>
+            <h2> Name from State : { name1 }</h2>
+            <h3> Price from State: { price1 }</h3>
             <h3> inStock from State: { inStock ? 'YES' : 'NO' }</h3>
 
             <br/>
