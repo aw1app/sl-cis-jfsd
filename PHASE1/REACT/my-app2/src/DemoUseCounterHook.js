@@ -4,7 +4,7 @@ import useCounter from "./hooks/useCounter";
 const DemoUseCounterHook = () =>{
 
     let { count, increment, decrement}=  useCounter(100);
-
+    
     
     return(
         <div style={{ border: "dotted 2px", "border-color": 'black' }}>
