@@ -32,7 +32,7 @@ export const weatherReducer = (state = initialState, action) => {
                 data: null,
                 error: action.payload
             };
-
+        default: return state;
     }
 
 }

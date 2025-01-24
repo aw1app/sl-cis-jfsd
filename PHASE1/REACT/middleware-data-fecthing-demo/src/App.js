@@ -1,24 +1,29 @@
-import logo from './logo.svg';
 import './App.css';
 
+import {useSelector, useDispatch, Provider } from 'react-redux';
+import Weather from './components/Weather';
+import WeatherForm from './components/WeatherForm';
+import {fetchWeather} from './actions/weather/action'
+
 function App() {
+  const weatherData = useSelector((state) => state.data);
+  const loading = useSelector((state) => state.loading);
+  const error = useSelector((state) => state.error);
+
+  const dispatch = useDispatch();
+
+  const handleCitySubmit = (city) => {
+    dispatch(fetchWeather(city));  // Dispatch the fetchWeather action
+  };
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+   
+      <div className="App">
+      <WeatherForm onSubmit={handleCitySubmit}/>
+      <Weather weatherData={weatherData} loading={loading} error={error} />
+      
+      </div>
+    
   );
 }
 
