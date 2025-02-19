@@ -18,5 +18,14 @@ public class ProjectMain {
 		
 		float result3 = b1.method2(2.5f, 3.5f);
 		System.out.println("result3 =  " + result3);
+		
+		
+		String s = "Hello Wortld";
+		boolean result4 = s.contains("Hello");
+		System.out.println("\n result4 =  " + result4);
+		
+		System.out.println("\n static method demo (method5 of B)   ");
+		B.method5();
+		
 	}
 }
