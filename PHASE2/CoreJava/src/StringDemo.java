@@ -47,8 +47,8 @@ public class StringDemo {
 		System.out.println("\n\n Replacement demo");
 		String str1="Heello";
 		String str1Replaced=str1.replace('e', 'k');
-		System.out.println(str1); //Hello 
-		System.out.println(str1Replaced); // Hkllo
+		System.out.println(str1); //Heello 
+		System.out.println(str1Replaced); // Hkkllo
 
 
 	}
