@@ -22,7 +22,9 @@ public class StringBufferDemo {
 		StringBuffer sb11 = new StringBuffer("let");
 		sb11.insert(2, "n");
 		System.out.println("After insert -- " +		sb11.toString());
-
+		
+		
+		// Challenge: Given a text , check where it is palindrome
 	}
 
 }
