@@ -6,6 +6,8 @@ export const FETCH_PRODUCTS_REQUEST = 'FETCH_PRODUCTS_REQUEST';
 export const FETCH_PRODUCTS_SUCCESS = 'FETCH_PRODUCTS_SUCCESS';
 export const FETCH_PRODUCTS_FAILURE = 'FETCH_PRODUCTS_FAILURE';
 
+export const ADD_PRODUCT_REQUEST = 'ADD_PRODUCTS_REQUEST';
+
 export const fetchWeatherRequest = () => (
     {
         type: FETCH_WEATHER_REQUEST
@@ -42,6 +44,11 @@ export const fetchProductsFailure = (error) => ({
     payload: error
   });
 
+  export const addProductRequest = (product) => ({
+    type: ADD_PRODUCT_REQUEST,
+    payload: product
+  });
+
   export const fetchWeather = (city) => {
     return async (dispatch) => {
 
@@ -70,10 +77,39 @@ export const fetchProductsFailure = (error) => ({
         const response = await fetch(`http://localhost:5000/products`);
         const data = await response.json();
 
+        console.log("INSIDE fetchProducts of action.js ",data);
+
         dispatch(fetchProductsSuccess(data));
 
       } catch (error) {
         dispatch(fetchProductsFailure(error.message));
+      }
+    };
+  };
+
+
+  export const addProducts = product => {
+    return async (dispatch) => {
+
+      dispatch(addProductRequest(product));
+
+      try {
+        const response = await fetch(`http://localhost:5000/products`, {
+            method:"POST",
+            headers: {
+                "Content-Type": "application/json", // Set the content type
+              },
+              body: JSON.stringify(product),
+        });
+        if (!response.ok) {
+            throw new Error("Failed to add the product");
+        };
+        
+        const data = await response.json();
+        console.log("INSIDE addProduct of action.js ",data);      
+
+      } catch (error) {
+        console.log(error.message);
       }
     };
   };

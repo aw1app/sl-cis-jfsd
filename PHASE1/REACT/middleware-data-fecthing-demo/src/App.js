@@ -43,6 +43,7 @@ function App() {
       </div> */}
 
       <NavBar />
+      <Routes>
       <Route
         path="/weather"
         element={
@@ -54,7 +55,7 @@ function App() {
       />
 
       <Route
-        path="/products"
+        path="/list-products"
         element={
           <Productlist
             products={products}
@@ -70,6 +71,7 @@ function App() {
         path="/"
         element={<h1>Welcome! Use /weather or /products in the URL.</h1>}
       />
+      </Routes>
     </Router>
 
   );
