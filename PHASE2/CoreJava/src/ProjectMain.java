@@ -12,5 +12,11 @@ public class ProjectMain {
 
 		int result1 = b1.method2(2, 3);
 		System.out.println("result1 =  " + result1);
+		
+		int result2 = b1.method2(2, 3.5f);
+		System.out.println("result2 =  " + result2);
+		
+		float result3 = b1.method2(2.5f, 3.5f);
+		System.out.println("result3 =  " + result3);
 	}
 }
