@@ -3,6 +3,7 @@
 public class B {
 	// variables
 	int x;
+	static int y=55;
 
 	// Static Methods
 	static void method5() {

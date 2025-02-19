@@ -20,12 +20,16 @@ public class ProjectMain {
 		System.out.println("result3 =  " + result3);
 		
 		
-		String s = "Hello Wortld";
+		String s = "Hello World";
 		boolean result4 = s.contains("Hello");
 		System.out.println("\n result4 =  " + result4);
 		
 		System.out.println("\n static method demo (method5 of B)   ");
 		B.method5();
+		b1.method5();
+		
+		System.out.println("\n static variable demo (y of B)   " + B.y);
+		System.out.println("\n static variable demo (y of object b1)   " + b1.y);
 		
 	}
 }
