@@ -1,5 +1,7 @@
+import java.util.Date;
 import java.util.Scanner;
 
+import com.airline.logistics.AirPlane;
 import com.airline.staff.Pilot;
 
 public class AirlineMain {
@@ -14,21 +16,76 @@ public class AirlineMain {
 		
 		Scanner scanner =  new Scanner(System.in);
 		
+//		System.out.println(" ** Creating first Pilot **");
+//		System.out.println("Enter Pilot's name:");
+//		String name = scanner.next();
+//		
+//		System.out.println("Enter Pilot's exp in years:");
+//		float exp = scanner.nextFloat();
+//		
+		//Pilot p1 = new Pilot("Rakesh",10.5f );
+		
+//		Pilot p1 = new Pilot(name,exp);		
+//
+//		System.out.println("Display Pilot p1's details:");
+//		System.out.println(p1.displayPilotInfo());	
+		
+		
+		//Create the second Pilot
+		System.out.println(" ** Creating another Pilot **");
+		Pilot p2 =createPilot(scanner);
+		
+		System.out.println("Display Pilot p2's details:");
+		System.out.println(p2.displayPilotInfo());	
+		
+		
+		AirPlane a1 = createAirPlane(scanner);
+		
+		
+		boolean isSuccess = p2.takeOff(a1);
+		
+		System.out.println(" Plane Take off is " + isSuccess);
+		
+		scanner.close();
+	}
+	
+	public static Pilot createPilot(Scanner scanner) {
 		System.out.println("Enter Pilot's name:");
-		String name = scanner.nextLine();
+		String name = scanner.next();
 		
 		System.out.println("Enter Pilot's exp in years:");
 		float exp = scanner.nextFloat();
 		
-		//Pilot p1 = new Pilot("Rakesh",10.5f );
+		System.out.println("Enter Pilot's license number:");
+		long license = scanner.nextLong();
 		
-		Pilot p1 = new Pilot(name,exp);
+		System.out.println("Enter Pilot's dob in yyyy-mm-dd format:");
+		String dateStr =  scanner.next();
+//		String[] dateParts = date.split("-");
+		Date dob = new Date();
 		
-
-		System.out.println("Display Pilot's details:");
-		System.out.println(p1.displayPilotInfo());
+		Pilot p = new Pilot(name,exp,license, dob );
 		
-		scanner.close();
+		return p;		
+	}
+	
+	
+	public static AirPlane createAirPlane(Scanner scanner) {
+		System.out.println("Enter Airplane name:");
+		String name = scanner.next();
+		
+		System.out.println("Enter Airplane source:");
+		String source = scanner.next();
+		
+		System.out.println("Enter Airplane destination:");
+		String dest = scanner.next();
+		
+		System.out.println("Enter Airplane fare:");
+		int fare =  scanner.nextInt();
+		
+		AirPlane a = new AirPlane(name,source,dest, fare );
+		
+		return a;		
 	}
 
 }

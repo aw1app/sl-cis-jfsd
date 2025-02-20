@@ -10,7 +10,7 @@ public class Pilot {
 	public String name;
 	float experience;
 
-	protected String license;
+	protected long license;
 
 	private Date dob;
 
@@ -31,20 +31,20 @@ public class Pilot {
 	}
 
 	// Overloaded constructor
-	public Pilot(String name, float experience, String license, Date dob) {
+	public Pilot(String name, float experience, long license, Date dob) {
 		this(name,experience);
 		this.license = license;
 		this.dob = dob;
 	}
 
 	// methods
-	boolean takeOff(AirPlane plane) {
+	public boolean takeOff(AirPlane plane) {
 		boolean success = true;
 
 		return success;
 	}
 
-	boolean land(AirPlane plane) {
+	public boolean land(AirPlane plane) {
 
 		boolean success = true;
 
