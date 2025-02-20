@@ -9,10 +9,34 @@ public class Pilot {
 	// data
 	public String name;
 	float experience;
-	
+
 	protected String license;
 
 	private Date dob;
+
+	// Default constructor
+	public Pilot() {
+
+	}
+
+	// Overloaded constructor
+	public Pilot(String name) {
+		this.name = name;
+	}
+
+	// Overloaded constructor
+	public Pilot(String name, float experience) {
+		this.name = name;
+		this.experience = experience;
+	}
+
+	// Overloaded constructor
+	public Pilot(String name, float experience, String license, Date dob) {
+		this.name = name;
+		this.experience = experience;
+		this.license = license;
+		this.dob = dob;
+	}
 
 	// methods
 	boolean takeOff(AirPlane plane) {
@@ -28,13 +52,12 @@ public class Pilot {
 		return success;
 
 	}
-	
-	
-	public void announce(String message){
+
+	public void announce(String message) {
 		System.out.println(message);
 	}
-	
-	private void updateExperience(float exp ){
-		
+
+	private void updateExperience(float exp) {
+
 	}
 }
