@@ -3,6 +3,7 @@ import java.util.Scanner;
 
 import com.airline.logistics.AirPlane;
 import com.airline.staff.Pilot;
+import com.airline.staff.TrainerPilot;
 
 public class AirlineMain {
 
@@ -45,6 +46,11 @@ public class AirlineMain {
 		boolean isSuccess = p2.takeOff(a1);
 		
 		System.out.println(" Plane Take off is " + isSuccess);
+		
+		
+		TrainerPilot tp1 = new TrainerPilot("Sudhkar", 10.0f, 4785678578578L);
+		
+		System.out.println(tp1.displayPilotInfo());
 		
 		scanner.close();
 	}

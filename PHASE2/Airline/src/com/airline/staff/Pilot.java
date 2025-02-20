@@ -29,6 +29,12 @@ public class Pilot {
 		this(name);
 		this.experience = experience;
 	}
+	
+	// Overloaded constructor
+		public Pilot(String name, float experience, long license) {
+			this(name,experience);
+			this.license = license;
+		}
 
 	// Overloaded constructor
 	public Pilot(String name, float experience, long license, Date dob) {
