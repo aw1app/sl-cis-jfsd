@@ -30,7 +30,14 @@ public class TrainerPilot extends Pilot{
 	public float getNoOfTrainerExperience() {
 		return noOfTrainerExperience;
 	}
+	
+	
 
+	// Overridden
+		@Override
+	public String getName() {
+		return this.name.toUpperCase();
+	}
 
 	// Overridden
 	@Override

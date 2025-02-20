@@ -66,6 +66,10 @@ public class Pilot {
 
 	}
 	
+	public String getName() {
+		return this.name.toLowerCase();
+	}
+	
 	public String displayPilotInfo() {
 		return this.name + ", " + this.experience;
 	}

@@ -1,13 +1,19 @@
 import java.util.Date;
 import java.util.Scanner;
 
+import org.xml.sax.HandlerBase;
+
 import com.airline.logistics.AirPlane;
+import com.airline.staff.HelpDesk;
 import com.airline.staff.Pilot;
 import com.airline.staff.TrainerPilot;
 
 public class AirlineMain {
 
 	public static void main(String[] args) {
+		
+		// HelpDesk hd1 = new HelpDesk(); // Invalid
+		HelpDesk hd1 = new TemporaryHelpDesk();
 		
 //		Pilot p1 = new Pilot();
 //		
@@ -60,9 +66,10 @@ public class AirlineMain {
 		
 		
 		Pilot tp3 = new TrainerPilot();
-		System.out.println("TP3 name is  " + tp3.name); //? "PILOT000" ??  or "TRAINER-PILOT000"
+		System.out.println("TP3 name is  tp3.name" + tp3.name); //? "PILOT000" ??  or "TRAINER-PILOT000"
+		System.out.println("TP3 name is from  tp3.getName() " + tp3.getName()); //"pilot000" ??  or "TRAINER-PILOT000"
 		
-		System.out.println(tp3.displayPilotInfo()); // name&exp? or name&exp&traineExp?
+		//System.out.println(tp3.displayPilotInfo()); // name&exp? or name&exp&traineExp?
 		
 		
 		

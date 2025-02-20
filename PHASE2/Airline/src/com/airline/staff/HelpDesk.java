@@ -1,5 +1,11 @@
 package com.airline.staff;
 
-public class HelpDesk {
+public abstract class HelpDesk {
+	
+	abstract public void provideHelp();
+	
+	public void provideSuggestion() {
+		System.out.println("Hwere is my suggestion...");
+	};
 
 }
