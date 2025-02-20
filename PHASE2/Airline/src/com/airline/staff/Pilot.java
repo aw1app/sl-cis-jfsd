@@ -7,7 +7,7 @@ import com.airline.logistics.AirPlane;
 public class Pilot {
 
 	// data
-	public String name;
+	public String name="PILOT000";
 	float experience;
 
 	protected long license;

@@ -4,10 +4,15 @@ import java.util.Date;
 
 public class TrainerPilot extends Pilot{
 	// Inherited variable/feilds
+	public String name="TRAINER-PILOT000";
 	
 	// New properties/feilds
 	float noOfTrainerExperience;
 	
+	
+	public TrainerPilot() {
+			
+	}
 	
 	public TrainerPilot(String name, float experience, long license) {
 		super(name, experience, license);
@@ -28,11 +33,11 @@ public class TrainerPilot extends Pilot{
 
 
 	// Overridden
-//	@Override
-//	public String displayPilotInfo() {
-//		return "NAME " + this.name + ", EXP " + this.experience + ", TRAINER EXP " + this.noOfTrainerExperience;
-//	}
-//	
+	@Override
+	public String displayPilotInfo() {
+		return "NAME " + this.name + ", EXP " + this.experience + ", TRAINER EXP " + this.noOfTrainerExperience;
+	}
+	
 	
 	
 }

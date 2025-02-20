@@ -33,24 +33,39 @@ public class AirlineMain {
 		
 		
 		//Create the second Pilot
-		System.out.println(" ** Creating another Pilot **");
-		Pilot p2 =createPilot(scanner);
+//		System.out.println(" ** Creating another Pilot **");
+//		Pilot p2 =createPilot(scanner);
+//		
+//		System.out.println("Display Pilot p2's details:");
+//		System.out.println(p2.displayPilotInfo());	
+//		
+//		
+//		AirPlane a1 = createAirPlane(scanner);
+//		
+//		
+//		boolean isSuccess = p2.takeOff(a1);
+//		
+//		System.out.println(" Plane Take off is " + isSuccess);
 		
-		System.out.println("Display Pilot p2's details:");
-		System.out.println(p2.displayPilotInfo());	
 		
-		
-		AirPlane a1 = createAirPlane(scanner);
-		
-		
-		boolean isSuccess = p2.takeOff(a1);
-		
-		System.out.println(" Plane Take off is " + isSuccess);
-		
-		
+		// Inheritance in action
 		TrainerPilot tp1 = new TrainerPilot("Sudhkar", 10.0f, 4785678578578L);
+		System.out.println(tp1.name); //? "PILOT000" ??  or "Sudhkar"?
 		
 		System.out.println(tp1.displayPilotInfo());
+		
+		
+		TrainerPilot tp2 = new TrainerPilot();
+		System.out.println(tp2.name); //? "PILOT000" ??  or "TRAINER-PILOT000"
+		
+		
+		Pilot tp3 = new TrainerPilot();
+		System.out.println("TP3 name is  " + tp3.name); //? "PILOT000" ??  or "TRAINER-PILOT000"
+		
+		System.out.println(tp3.displayPilotInfo()); // name&exp? or name&exp&traineExp?
+		
+		
+		
 		
 		scanner.close();
 	}
