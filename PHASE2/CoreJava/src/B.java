@@ -1,7 +1,7 @@
 
 // Demo classes and methods
 public class B {
-	// variables
+	// variables (properties, fields)
 	int x;
 	static int y=55;
 
