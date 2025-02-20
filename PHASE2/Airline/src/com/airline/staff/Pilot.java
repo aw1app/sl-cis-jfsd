@@ -26,14 +26,13 @@ public class Pilot {
 
 	// Overloaded constructor
 	public Pilot(String name, float experience) {
-		this.name = name;
+		this(name);
 		this.experience = experience;
 	}
 
 	// Overloaded constructor
 	public Pilot(String name, float experience, String license, Date dob) {
-		this.name = name;
-		this.experience = experience;
+		this(name,experience);
 		this.license = license;
 		this.dob = dob;
 	}
@@ -59,5 +58,9 @@ public class Pilot {
 
 	private void updateExperience(float exp) {
 
+	}
+	
+	public String displayPilotInfo() {
+		return this.name + ", " + this.experience;
 	}
 }
