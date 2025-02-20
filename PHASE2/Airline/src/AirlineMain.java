@@ -32,3 +32,5 @@ public class AirlineMain {
 	}
 
 }
+
+//CHALLENGE: Modify the above program to create a pilot with all the feilds values
