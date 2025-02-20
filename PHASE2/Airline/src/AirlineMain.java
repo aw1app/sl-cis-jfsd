@@ -3,9 +3,12 @@ import java.util.Scanner;
 
 import org.xml.sax.HandlerBase;
 
+import com.airline.artifacts.StandardTicket;
+import com.airline.artifacts.TicketInterface;
 import com.airline.logistics.AirPlane;
 import com.airline.staff.HelpDesk;
 import com.airline.staff.Pilot;
+import com.airline.staff.TemporaryHelpDesk;
 import com.airline.staff.TrainerPilot;
 
 public class AirlineMain {
@@ -13,7 +16,12 @@ public class AirlineMain {
 	public static void main(String[] args) {
 		
 		// HelpDesk hd1 = new HelpDesk(); // Invalid
-		HelpDesk hd1 = new TemporaryHelpDesk();
+		HelpDesk hd1 = new TemporaryHelpDesk(); // Valid
+		hd1.provideSuggestion();
+		
+		TicketInterface ticket1 = new StandardTicket();
+		ticket1.buy();
+		ticket1.use();
 		
 //		Pilot p1 = new Pilot();
 //		
