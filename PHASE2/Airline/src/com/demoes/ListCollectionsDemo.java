@@ -9,7 +9,7 @@ import com.airline.staff.Pilot;
 
 import com.airline.staff.Pilot;
 
-public class CollectionsDemo {
+public class ListCollectionsDemo {
 	static Scanner scanner =  new Scanner(System.in);
 	
 	public static void main(String[] args) {
