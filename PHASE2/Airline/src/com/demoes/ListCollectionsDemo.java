@@ -87,6 +87,14 @@ public class ListCollectionsDemo {
 		
 		// Sorting
 		// Challenge: Iterate and display the Pilots sorted according to thier experience
+		listOfPilots.sort(  (pilot1,pilot2) ->  
+			(int) (pilot1.getExperience() -  pilot2.getExperience()) );
+		
+		System.out.println(" Pilots sorted as per experience level");
+		for(Pilot p : listOfPilots) {
+			//System.out.println( p.displayPilotInfo());
+			System.out.println( p.getName() + "\t" + p.getExperience() + "\t" + p.getLicense() );
+		}
 		
 		// Searching ...
 		
