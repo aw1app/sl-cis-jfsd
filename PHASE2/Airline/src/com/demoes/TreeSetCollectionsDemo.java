@@ -33,7 +33,8 @@ public class TreeSetCollectionsDemo {
 		System.out.println("Size of setOfPilots is " + setOfPilots.size()); // 4
 		
 		//Iteration - Try
-		System.out.println(" Iteration demo using simplified for loop");
+		System.out.println(" Iteration demo using simplified for loop. Because we are using Treeset, it"
+				+ "will display in Sorted manner based on experience");
 		for(Pilot p : setOfPilots) {
 			//System.out.println( p.displayPilotInfo());
 			System.out.println( p.getName() + "\t" + p.getExperience() + "\t" + p.getLicense() );
