@@ -34,6 +34,11 @@ public class StackDemo {
 
 		);
 		
+		//OR
+		for( Pilot p : pilotStack) {
+			System.out.println(p.displayPilotInfo());
+		}
+		
 		
 		// Peeking at the top element
         System.out.println("Top element (peek): " + pilotStack.peek().displayPilotInfo());
