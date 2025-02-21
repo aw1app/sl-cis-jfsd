@@ -14,6 +14,8 @@ public class ExceptionDemo2 {
 			FileReader fr = new FileReader("C:\\Users\\home\\sl-cis-jfsd\\PHASE2\\Airline\\src\\phone_nos.txt");
 
 			int c = fr.read();
+			
+			System.out.println((char)c);
 
 		} catch (FileNotFoundException e) {
 
