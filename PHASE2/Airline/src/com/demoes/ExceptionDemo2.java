@@ -44,3 +44,6 @@ public class ExceptionDemo2 {
 // subclass exceptions should caught before the superclass exception
 // Check out which exception is subclass of other from here: 
 // https://docs.oracle.com/javase/8/docs/api/java/lang/Exception.html
+
+// NOTE finally block is optional
+// Use the finally blcok to do some cleanup stuff like closing file, closing DB connections,etc
