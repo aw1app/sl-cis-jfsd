@@ -86,6 +86,8 @@ public class CollectionsDemo {
 		}
 		
 		// Sorting
+		// Challenge: Iterate and display the Pilots sorted according to thier experience
+		
 		// Searching ...
 		
 	}
