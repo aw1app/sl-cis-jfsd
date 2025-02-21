@@ -16,6 +16,9 @@ public class SetCollectionsDemo {
 		
 		//ArrayList demo
 		
+		// NOTE: Order in which we add may not be preserved in case of Hashset. 
+		// TreeSet - elements will be added in sorted manner.
+		
 		Set<Integer> arraySet1 = new TreeSet<Integer>(); //new HashSet<Integer>();
 		
 		arraySet1.add(100); // 100 is auto boxed as an Integer automatically
