@@ -2,62 +2,56 @@ package com.demoes;
 
 import java.util.ArrayList;
 import java.util.Date;
-import java.util.LinkedList;
 import java.util.List;
 import java.util.Scanner;
+import java.util.Set;
+import java.util.TreeSet;
 
 import com.airline.staff.Pilot;
 
-public class ListCollectionsDemo {
+public class SetCollectionsDemo {
 	static Scanner scanner =  new Scanner(System.in);
 	
 	public static void main(String[] args) {
 		
 		//ArrayList demo
 		
-		List<Integer> arrayList1 = new ArrayList<Integer>();
+		Set<Integer> arraySet1 = new TreeSet<Integer>(); //new HashSet<Integer>();
 		
-		arrayList1.add(100); // 100 is auto boxed as an Integer automatically
-		arrayList1.add(56);
+		arraySet1.add(100); // 100 is auto boxed as an Integer automatically
+		arraySet1.add(56);
 		
-		System.out.println("Size of arrayList1 is " + arrayList1.size());
+		System.out.println("Size of arraySet1 is " + arraySet1.size()); // 4
 		
-		arrayList1.add(77);
-		arrayList1.add(23);
+		arraySet1.add(77);
+		arraySet1.add(23);
 		
-		
-		System.out.println("Size of arrayList1 is " + arrayList1.size());
-		
-		arrayList1.remove(3);
-		System.out.println("Size of arrayList1 after removing element at index 3 is " + arrayList1.size());
+		arraySet1.add(77); // ignored
 		
 		
-		// Iteration demo
+		System.out.println("Size of arraySet1 is " + arraySet1.size()); // 4 
+		
+		arraySet1.remove(3);
+		System.out.println("Size of arraySet1 after removing element 3 is " + arraySet1.size()); // 4
+		
+		
+		// Iteration demo			
 		System.out.println(" Iteration demo 1");
-		for(int i=0;i<arrayList1.size();i++) {
-			System.out.println(arrayList1.get(i));
-		}
-		
-		System.out.println(" Iteration demo 2");
-		for(int elem : arrayList1) {
+		for(int elem : arraySet1) {
 			System.out.print(elem + "\t");
 		}
 		
-		System.out.println("\n Iteration demo 3");
-		arrayList1.forEach( elem ->  System.out.print(elem + "\t") );
+		System.out.println("\n Iteration demo 2");
+		arraySet1.forEach( elem ->  System.out.print(elem + "\t") );
 		
 		
-		//sorting
-		arrayList1.sort(  (a,b) -> a-b      );
-		
-		System.out.println("\n Sorted list is : ");
-		arrayList1.forEach( elem ->  System.out.print(elem + "\t") );
-		
-		
+			
 		//searching
 		System.out.println("\n Searching list for 100 : ");
-		boolean is100Present = arrayList1.contains(100);
+		boolean is100Present = arraySet1.contains(100);
 		System.out.print(is100Present);
+		
+		System.exit(0);
 		
 		
 		System.out.println("\n\n PILOT LIST DEMO : ");
