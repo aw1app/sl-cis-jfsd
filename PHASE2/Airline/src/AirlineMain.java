@@ -19,7 +19,7 @@ public class AirlineMain {
 	public static void main(String[] args) {
 		AirPlane a0 = createAirPlane(scanner);
 		
-		// AirPlane.Engine e1 = a0.new Engine();
+		//AirPlane.Engine e1 = AirPlane.new Engine();
 		
 		// HelpDesk hd1 = new HelpDesk(); // Invalid
 		HelpDesk hd1 = new TemporaryHelpDesk(); // Valid

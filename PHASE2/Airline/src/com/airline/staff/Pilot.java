@@ -70,6 +70,36 @@ public class Pilot {
 		return this.name.toLowerCase();
 	}
 	
+	
+	
+	public float getExperience() {
+		return experience;
+	}
+
+	public void setExperience(float experience) {
+		this.experience = experience;
+	}
+
+	public long getLicense() {
+		return license;
+	}
+
+	public void setLicense(long license) {
+		this.license = license;
+	}
+
+	public Date getDob() {
+		return dob;
+	}
+
+	public void setDob(Date dob) {
+		this.dob = dob;
+	}
+
+	public void setName(String name) {
+		this.name = name;
+	}
+
 	public String displayPilotInfo() {
 		return this.name + ", " + this.experience;
 	}

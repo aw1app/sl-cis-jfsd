@@ -59,7 +59,8 @@ public class AirPlane {
 	
 	
 	// Inner class
-	private class Engine {
+	// private class Engine {
+	public static class Engine {
 		
 		// data
 		
