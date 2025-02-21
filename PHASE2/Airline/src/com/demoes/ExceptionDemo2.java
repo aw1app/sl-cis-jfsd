@@ -12,7 +12,7 @@ public class ExceptionDemo2 {
 		FileReader fr = null;
 
 		try {
-			 fr = new FileReader("C:\\Users\\home\\sl-cis-jfsd\\PHASE2\\Airline\\src\\phone_nos.txt");
+			 fr = new FileReader("C:\\Users\\home\\sl-cis-jfsd\\PHASE2\\Airline\\src\\phone_nos000.txt");
 
 			int c = fr.read();
 			
@@ -25,10 +25,14 @@ public class ExceptionDemo2 {
 
 			System.out.println(" File not readable.");
 		} finally {
+			System.out.println(" INSIDE finally block.");
 			try {
-				fr.close();
+				if(fr!=null) {
+					fr.close();
+				System.out.println(" File closed successfully.");
+				}
 			} catch (IOException e) {				
-				e.printStackTrace();
+				System.out.println(" File closing had errors.");
 			}
 		}
 
