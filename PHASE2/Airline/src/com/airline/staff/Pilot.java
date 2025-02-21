@@ -4,7 +4,7 @@ import java.util.Date;
 
 import com.airline.logistics.AirPlane;
 
-public class Pilot {
+public class Pilot implements Comparable<Pilot>{
 
 	// data
 	public String name="PILOT000";
@@ -103,4 +103,12 @@ public class Pilot {
 	public String displayPilotInfo() {
 		return this.name + ", " + this.experience;
 	}
+
+	@Override
+	public int compareTo(Pilot o) {
+		
+		return (int) (this.getExperience() - o.getExperience());
+	}
+
+	
 }
