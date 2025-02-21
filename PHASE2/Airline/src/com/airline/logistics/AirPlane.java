@@ -8,6 +8,8 @@ public class AirPlane {
 	public String destination;
 	
 	public int fare;
+	
+	Engine engine;
 
 	public AirPlane(String name, String source, String destination, int fare) {
 		super();
@@ -15,6 +17,12 @@ public class AirPlane {
 		this.source = source;
 		this.destination = destination;
 		this.fare = fare;
+		
+		this.engine = new Engine();
+	}
+	
+	public void takeOff() {
+		this.engine.start();
 	}
 
 	public String getName() {
@@ -47,6 +55,21 @@ public class AirPlane {
 
 	public void setFare(int fare) {
 		this.fare = fare;
+	}
+	
+	
+	// Inner class
+	private class Engine {
+		
+		// data
+		
+		
+		// methods
+		void start(){
+			
+		}
+		
+
 	}
 	
 }

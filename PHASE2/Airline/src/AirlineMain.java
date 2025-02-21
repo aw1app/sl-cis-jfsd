@@ -10,14 +10,22 @@ import com.airline.staff.HelpDesk;
 import com.airline.staff.Pilot;
 import com.airline.staff.TemporaryHelpDesk;
 import com.airline.staff.TrainerPilot;
+import com.demoes.Engine;
 
 public class AirlineMain {
+	static Scanner scanner =  new Scanner(System.in);
+	
 
 	public static void main(String[] args) {
+		AirPlane a0 = createAirPlane(scanner);
+		
+		// AirPlane.Engine e1 = a0.new Engine();
 		
 		// HelpDesk hd1 = new HelpDesk(); // Invalid
 		HelpDesk hd1 = new TemporaryHelpDesk(); // Valid
 		hd1.provideSuggestion();
+		
+		// hd1.x=1001; // invalid because we cannot re-assign because x is decl as final
 		
 		TicketInterface ticket1 = new StandardTicket();
 		ticket1.buy();
@@ -29,7 +37,6 @@ public class AirlineMain {
 //		p1.experience = 10.5f;  // invalid assignment due to access level
 		
 		
-		Scanner scanner =  new Scanner(System.in);
 		
 //		System.out.println(" ** Creating first Pilot **");
 //		System.out.println("Enter Pilot's name:");
