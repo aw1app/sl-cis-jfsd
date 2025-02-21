@@ -26,6 +26,7 @@ public class StackDemo {
 		System.out.println("Stack after pushes: " + pilotStack);
 
 		// Iteration
+		System.out.println("Iteration approach 1");
 		pilotStack.forEach(
 
 				p -> {
@@ -35,6 +36,7 @@ public class StackDemo {
 		);
 		
 		//OR
+		System.out.println("Iteration approach 2");
 		for( Pilot p : pilotStack) {
 			System.out.println(p.displayPilotInfo());
 		}
