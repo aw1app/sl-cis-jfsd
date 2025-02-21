@@ -12,11 +12,11 @@ public class ExceptionDemo2 {
 		FileReader fr = null;
 
 		try {
-			 fr = new FileReader("C:\\Users\\home\\sl-cis-jfsd\\PHASE2\\Airline\\src\\phone_nos000.txt");
+			fr = new FileReader("C:\\Users\\home\\sl-cis-jfsd\\PHASE2\\Airline\\src\\phone_nos.txt");
 
 			int c = fr.read();
-			
-			System.out.println((char)c);
+
+			System.out.println((char) c);
 
 		} catch (FileNotFoundException e) {
 
@@ -27,11 +27,11 @@ public class ExceptionDemo2 {
 		} finally {
 			System.out.println(" INSIDE finally block.");
 			try {
-				if(fr!=null) {
+				if (fr != null) {
 					fr.close();
-				System.out.println(" File closed successfully.");
+					System.out.println(" File closed successfully.");
 				}
-			} catch (IOException e) {				
+			} catch (IOException e) {
 				System.out.println(" File closing had errors.");
 			}
 		}
@@ -40,9 +40,7 @@ public class ExceptionDemo2 {
 
 }
 
-
 //NOTES when you have several catch blocks,
 // subclass exceptions should caught before the superclass exception
 // Check out which exception is subclass of other from here: 
 // https://docs.oracle.com/javase/8/docs/api/java/lang/Exception.html
-
