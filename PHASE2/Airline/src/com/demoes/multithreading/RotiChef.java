@@ -10,8 +10,7 @@ public class RotiChef implements Runnable{
 	}
 	
 	public void run() {
-
-		plate.addItem("Roti");
+		plate.addItem("Roti", Thread.currentThread().getName());
 
 	}
 

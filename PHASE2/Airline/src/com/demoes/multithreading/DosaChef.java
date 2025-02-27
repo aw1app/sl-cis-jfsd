@@ -10,8 +10,7 @@ public class DosaChef implements Runnable{
 	}
 
 	public void run() {
-
-		plate.addItem("Dosa");
+		plate.addItem("Dosa", Thread.currentThread().getName());
 
 	}
 
