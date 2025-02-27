@@ -1,1 +1,15 @@
 /.metadata/
+
+# Ignore all .class files
+*.class
+
+# Ignore bin directory (Eclipse output folder)
+bin/
+
+# Ignore .classpath and .project files (optional, Eclipse-specific metadata)
+.classpath
+.project
+
+# Ignore settings folder (optional, Eclipse-specific settings)
+.settings/
+
