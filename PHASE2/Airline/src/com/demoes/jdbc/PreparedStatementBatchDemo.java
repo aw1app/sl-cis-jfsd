@@ -4,6 +4,7 @@ import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
+import java.util.Arrays;
 
 public class PreparedStatementBatchDemo {
 
@@ -23,33 +24,33 @@ public class PreparedStatementBatchDemo {
 			System.err.println(e);
 		}
 		;
-		
-		// Step 4: 
+
+		// Step 4:
 		try {
-			preparedStmt.setString(1, "Tata Car 5");
-			preparedStmt.setDouble(2, 10000001.00d);
+			preparedStmt.setString(1, "Tata Car 15");
+			preparedStmt.setDouble(2, 10000015.00d);
 			preparedStmt.setString(3, "Automobile");
-			
+
 			preparedStmt.addBatch();
-			
-			
-			preparedStmt.setString(1, "Tata Car 6");
-			preparedStmt.setDouble(2, 10000001.00d);
+
+			preparedStmt.setString(1, "Tata Car 16");
+			preparedStmt.setDouble(2, 10000016.00d);
 			preparedStmt.setString(3, "Automobile");
-			
+
 			preparedStmt.addBatch();
-			
-			preparedStmt.setString(1, "Tata Car 7");
-			preparedStmt.setDouble(2, 10000003.00d);
+
+			preparedStmt.setString(1, "Tata Car 17");
+			preparedStmt.setDouble(2, 10000017.00d);
 			preparedStmt.setString(3, "Automobile");
-			
+
 			preparedStmt.addBatch();
-			
-			
-			preparedStmt.executeBatch();
-			
+
+			int[] results = preparedStmt.executeBatch();
+
+			System.out.println(Arrays.toString(results));
+
 			preparedStmt.clearParameters();
-			
+
 		} catch (SQLException e) {
 			System.out.println(e);
 		}
