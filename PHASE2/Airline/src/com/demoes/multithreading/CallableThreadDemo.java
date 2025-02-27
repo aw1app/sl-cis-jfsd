@@ -30,11 +30,11 @@ public class CallableThreadDemo {
 
 		int result1;
 		try {
-			result1 = future1.get(5, TimeUnit.SECONDS);
+			result1 = future1.get(5, TimeUnit.SECONDS); // time out of 5 ms
 			
 			System.out.println("Result from Task 1: " + result1);
 
-			int result2 = future2.get(5, TimeUnit.SECONDS);
+			int result2 = future2.get(10, TimeUnit.SECONDS);// time out of 10 ms
 			System.out.println("Result from Task 2: " + result2);			
 			
 		} catch (InterruptedException | ExecutionException | TimeoutException e) {
