@@ -12,6 +12,12 @@ public class ThreadDemo {
 		np1.start();
 		
 		
+		NumberProducingThread np2 = new NumberProducingThread();
+		np2.setName("NP2");
+
+		np2.start();
+		
+		
 
 		for (int i = 0; i < 50; i++) {
 
