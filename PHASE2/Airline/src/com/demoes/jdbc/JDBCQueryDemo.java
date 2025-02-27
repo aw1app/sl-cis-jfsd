@@ -52,6 +52,13 @@ public class JDBCQueryDemo {
 		} catch (SQLException e) {
 			System.err.println(e);
 		}
+		
+		
+		try {
+			connection.close();
+		} catch (SQLException e) {			
+			e.printStackTrace();
+		}
 
 	}
 
