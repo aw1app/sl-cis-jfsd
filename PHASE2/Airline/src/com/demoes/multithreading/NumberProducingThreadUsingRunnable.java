@@ -10,6 +10,13 @@ public class NumberProducingThreadUsingRunnable implements Runnable{
 			
 			System.out.println(Thread.currentThread().getName() + " i = " + i);
 			
+			try {
+				Thread.sleep(10);
+				System.out.println(Thread.currentThread().getName() + " going to sleep for 10 ms " );
+			} catch (InterruptedException e) {
+				
+			} // sleep for 10 ms
+			
 		}
 		
 	}

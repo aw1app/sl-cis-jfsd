@@ -4,7 +4,7 @@ public class ThreadDemo {
 
 	public static void main(String[] args) {
 		
-		mainDemoUsingExtendingThreadClass();
+		//mainDemoUsingExtendingThreadClass();
 
 		System.out.println(Thread.currentThread().getName());
 
@@ -25,6 +25,16 @@ public class ThreadDemo {
 		for (int i = 0; i < 50; i++) {
 
 			System.out.println(Thread.currentThread().getName() + " i = " + i);
+			
+			//checking here in main thread if t1 is still executing?...
+//			System.out.println("t1.isAlive() = "+  t1.isAlive());
+//			System.out.println("t2.isAlive() = "+  t2.isAlive());
+			
+			try {
+				Thread.sleep(10);
+				System.out.println(Thread.currentThread().getName() + " going to sleep for 10 ms " );
+			} catch (InterruptedException e) {				
+			} // sleep for 10 ms
 
 		}
 
