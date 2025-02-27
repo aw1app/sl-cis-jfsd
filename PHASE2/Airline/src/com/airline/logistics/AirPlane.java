@@ -1,5 +1,8 @@
 package com.airline.logistics;
 
+import com.airline.staff.Pilot;
+import com.demoes.PilotNotFoundException;
+
 public class AirPlane {
 
 	
@@ -21,7 +24,11 @@ public class AirPlane {
 		this.engine = new Engine();
 	}
 	
-	public void takeOff() {
+	public void takeOff(Pilot pilot) throws PilotNotFoundException{
+		if(pilot==null) {
+			throw new PilotNotFoundException("Pilot was null");
+		}
+		else
 		this.engine.start();
 	}
 

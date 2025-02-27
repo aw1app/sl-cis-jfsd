@@ -46,4 +46,4 @@ public class ExceptionDemo2 {
 // https://docs.oracle.com/javase/8/docs/api/java/lang/Exception.html
 
 // NOTE finally block is optional
-// Use the finally blcok to do some cleanup stuff like closing file, closing DB connections,etc
+// Use the finally block to do some cleanup stuff like closing file, closing DB connections,etc
