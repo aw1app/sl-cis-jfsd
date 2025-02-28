@@ -114,9 +114,7 @@ public class CachedRowsetDemo {
 			conn.commit();
 			
 			System.out.println("Check database, sync up would have happened now  id=1 "
-					+ "row should now longer exist");
-			
-			
+					+ "row should now longer exist");		
 			
 		}
 
