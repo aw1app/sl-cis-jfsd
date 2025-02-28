@@ -31,7 +31,7 @@ public class RowSetDemo {
 			}
 
 		} catch (SQLException e) {
-
+			System.err.printf("Caught exception : %s \n", e.getCause());
 		}
 
 	}
