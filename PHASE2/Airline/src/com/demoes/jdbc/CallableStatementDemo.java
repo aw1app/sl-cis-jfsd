@@ -26,12 +26,10 @@ public class CallableStatementDemo {
 		try {
 			callableStmt.setString(1, "Tesla Car 4");
 			callableStmt.setDouble(2, 10070005.00d);
-			callableStmt.setString(3, "Automobile");
+			callableStmt.setString(3, "Automobile");			
 			
-			
-			int count = callableStmt.executeUpdate();
-			
-			
+			//Invoke the SP
+			int count = callableStmt.executeUpdate();			
 			
 			System.out.printf("Through calling a SP, inserted %s number of rows \n", count);
 			
