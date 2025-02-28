@@ -53,7 +53,7 @@ public class FilteredRowSetdemo {
 			SalaryFilter salaryFilter = new SalaryFilter(70000.0);
 			filteredRowSet.setFilter(salaryFilter);
 
-			System.out.println("SalaryFilter applied. Employees with salary > 70000:");
+			System.out.println("\n SalaryFilter applied. Employees with salary > 70000:");
 			printRowSet(filteredRowSet);
 		}
 
