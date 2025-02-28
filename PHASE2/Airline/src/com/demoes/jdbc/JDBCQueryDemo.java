@@ -43,7 +43,7 @@ public class JDBCQueryDemo {
 				int id = rs.getInt("id");
 				String name = rs.getString("name");
 				double price = rs.getDouble("price");
-				String category = rs.getString("category");
+				String category = rs.getString("ca tegory");
 
 				//System.out.println("id=" + id + ", Name=" + name + ", Price=" + price + ", Category=" + category);
 				System.out.printf("id=%s \t Name=%s \t Price=%s \t Category=%s \t \n",id,name,price, category  );
