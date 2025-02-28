@@ -22,14 +22,14 @@ public class SavePointDemo {
 
 			stmt.setString(1, "Dell Laptop 1");
 			stmt.setDouble(2, 300000.07878787878d);
-			stmt.setString(3, "Electronics");
-
-			System.err.println("WARNINGS: " + stmt.getWarnings());
+			stmt.setString(3, "Electronics");			
 
 			stmt.executeUpdate();
+			System.err.println("WARNINGS: " + stmt.getWarnings());
 
 			// Create a SavePoint
 			savePoint1 = connection.setSavepoint("Savepoint1");
+			System.err.println("SavePoint 1 created successfully");
 
 			stmt.setString(1, "Dell Laptop 2");
 			stmt.setDouble(2, 3000.0d);
@@ -53,6 +53,8 @@ public class SavePointDemo {
 
 			try {
 				connection.rollback(savePoint1);
+				connection.commit();
+				
 //				 connection.rollback();
 				System.err.println("Rollback happened!");
 			} catch (SQLException e1) {
