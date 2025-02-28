@@ -4,6 +4,7 @@ import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
+import java.sql.Savepoint;
 import java.util.Arrays;
 
 public class CommitRollbackDemo {
@@ -25,6 +26,8 @@ public class CommitRollbackDemo {
 		}
 		;
 
+		Savepoint savePt1 = null;
+				
 		// Transaction Management
 		try {
 			connection.setAutoCommit(false);
@@ -34,12 +37,16 @@ public class CommitRollbackDemo {
 			preparedStmt.setString(3, "Electronics");
 
 			preparedStmt.addBatch();
+			int[] results = preparedStmt.executeBatch();
+
+			savePt1 = connection.setSavepoint();
 
 			preparedStmt.setString(1, "Apple Laptop 5");
 			preparedStmt.setDouble(2, 3000000000030.0d);
 			preparedStmt.setString(3, "Electronics");
 
 			preparedStmt.addBatch();
+			results = preparedStmt.executeBatch();
 
 			preparedStmt.setString(1, "Apple Laptop 6");
 			preparedStmt.setDouble(2, 3040.0d);
@@ -47,7 +54,7 @@ public class CommitRollbackDemo {
 
 			preparedStmt.addBatch();
 
-			int[] results = preparedStmt.executeBatch();
+			results = preparedStmt.executeBatch();
 
 			connection.commit();
 
@@ -58,7 +65,7 @@ public class CommitRollbackDemo {
 			System.err.println(" Caught exception with error code " + e.getErrorCode());
 
 			try {
-				connection.rollback();
+				connection.rollback(savePt1);
 				System.err.println(" Rolling back " + e.getErrorCode());
 			} catch (SQLException e1) {
 				System.err.println("Caught exception during Rolling back " + e.getErrorCode());
