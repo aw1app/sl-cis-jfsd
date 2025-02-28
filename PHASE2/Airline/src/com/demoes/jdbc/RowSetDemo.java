@@ -22,11 +22,24 @@ public class RowSetDemo {
 
 				// Initial data load
 				loadInitialData(rowSet);
+
+				System.out.println("Initial product data:");
+
+				printRowSet(rowSet);
+
+				//rowSet.absolute(5);
 				
-				 System.out.println("Initial product data:");
+				updateProductPrice(rowSet, "Tata Car 17", 1.0d);
+				rowSet.acceptChanges();
 				
-				 printRowSet(rowSet);
-				 
+				printRowSet(rowSet);
+				
+
+				//insertNewProduct(rowSet);
+
+				//System.out.println("Product table data after insert a ROW AS Position 5:");
+
+				
 
 			}
 
@@ -36,22 +49,60 @@ public class RowSetDemo {
 
 	}
 
-	private static void printRowSet(CachedRowSet rowSet) throws SQLException {
-		 // Print column headers
-        System.out.printf("%-4s  %-20s  %12s  %-15s%n", "ID", "Name", "Price", "Category");
-        System.out.println("-".repeat(55));
-        
-        while (rowSet.next()) {
-            
-                System.out.printf("%-4d  %-20s  %,12.2f  %-15s%n",
-                    rowSet.getInt("id"),
-                    rowSet.getString("name"),
-                    rowSet.getDouble("price"),
-                    rowSet.getString("category")
-                );
-            
-        }
+	private static void updateProductPrice(CachedRowSet rowSet, String productName, double newPrice)
+			throws SQLException {
 		
+		rowSet.beforeFirst();
+		
+		while (rowSet.next()) {
+			if (rowSet.getString("name").equals(productName)) {
+				rowSet.updateDouble("price", newPrice);
+				rowSet.updateRow();
+				break;
+			}
+		}
+	}
+
+	private static void insertNewProduct(CachedRowSet rowSet) throws SQLException {
+		// Save current position
+		int currentRow = rowSet.getRow();
+
+		try {
+			rowSet.moveToInsertRow();
+			rowSet.updateString("name", "Keyboard");
+			rowSet.updateDouble("price", 45.00);
+			rowSet.updateString("category", "Electronics");
+			rowSet.insertRow();
+
+			// Move back to previous position
+			if (currentRow > 0) {
+				rowSet.absolute(currentRow);
+			} else {
+				rowSet.beforeFirst();
+			}
+		} catch (SQLException e) {
+			// If insert fails, ensure we restore position
+			if (currentRow > 0) {
+				rowSet.absolute(currentRow);
+			} else {
+				rowSet.beforeFirst();
+			}
+			throw new SQLException("Failed to insert new product: " + e.getMessage());
+		}
+	}
+
+	private static void printRowSet(CachedRowSet rowSet) throws SQLException {
+		// Print column headers
+		System.out.printf("%-4s  %-20s  %12s  %-15s%n", "ID", "Name", "Price", "Category");
+		System.out.println("-".repeat(55));
+
+		while (rowSet.next()) {
+
+			System.out.printf("%-4d  %-20s  %,12.2f  %-15s%n", rowSet.getInt("id"), rowSet.getString("name"),
+					rowSet.getDouble("price"), rowSet.getString("category"));
+
+		}
+
 	}
 
 	private static void loadInitialData(CachedRowSet rowSet) throws SQLException {
