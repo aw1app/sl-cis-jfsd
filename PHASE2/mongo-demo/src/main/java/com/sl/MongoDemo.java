@@ -19,7 +19,7 @@ public class MongoDemo {
 		
 		connectToMongoDB();
 		
-		Document user = new Document("name", "John Doe").append("age", 30).append("email", "john@example.com")
+		Document user = new Document("name", "Jasprit").append("age", 30).append("email", "jassy@example.com")
 				.append("address", new Document("city", "New York").append("country", "USA"))
 				.append("hobbies", Arrays.asList("reading", "swimming"));
 		
