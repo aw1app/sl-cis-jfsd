@@ -39,7 +39,7 @@ public class MongoDemo {
 		usersCollection.find().forEach(doc -> System.out.println(doc.toJson()));	
 		
 		
-		Bson filter = Filters.eq("name", "Jasprit2");
+		Bson filter = Filters.gt("age", 32);
 		System.out.println("\n Jasprit2 named users:");
 		usersCollection.find(filter).forEach(doc -> System.out.println(doc.toJson()));	
 	}
