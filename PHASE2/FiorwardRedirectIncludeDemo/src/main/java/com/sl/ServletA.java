@@ -21,6 +21,7 @@ public class ServletA extends HttpServlet {
 		out.append("output 1 from servlet A");
 		
 		RequestDispatcher dispatcher = request.getRequestDispatcher("/B");
+		dispatcher.forward(request, response);
 		
 		out.append("output 2 from servlet A");
 		
