@@ -20,12 +20,14 @@ public class MongoDemo {
 		
 		connectToMongoDB();
 		
-//		Document user = new Document("name", "Jasprit2").append("age", 35).append("email", "jassy@example.com")
-//				.append("address", new Document("city", "New Jersey").append("country", "USA"))
-//				.append("eduaction", "MBA");
-//		
-//		//usersCollection.insertOne(user);
-		updateUser();
+		Document user = new Document("name", "Jasprit2").append("age", 35).append("email", "jassy@example.com")
+				.append("address", new Document("city", "New Jersey").append("country", "USA"))
+				.append("eduaction", "MBA");
+		
+		//usersCollection.insertOne(user);
+		//updateUser();
+		
+		//deleteUser();
 		
 		readUsers();
 
@@ -34,7 +36,12 @@ public class MongoDemo {
 	private static void readUsers() {
 		// Find all users
 		System.out.println("\nAll users:");
-		usersCollection.find().forEach(doc -> System.out.println(doc.toJson()));		
+		usersCollection.find().forEach(doc -> System.out.println(doc.toJson()));	
+		
+		
+		Bson filter = Filters.eq("name", "Jasprit2");
+		System.out.println("\n Jasprit2 named users:");
+		usersCollection.find(filter).forEach(doc -> System.out.println(doc.toJson()));	
 	}
 	
 	private static void updateUser() {
@@ -53,12 +60,26 @@ public class MongoDemo {
 //		System.out.println("Multiple users updated successfully.");
 	}
 	
+	
+	
+	private static void deleteUser() {
+		// Delete one user
+		Bson filter = Filters.eq("name", "Jasprit2");
+		usersCollection.deleteOne(filter);
+		System.out.println("User deleted successfully.");
+
+		// Delete multiple users
+//		Bson multiFilter = Filters.lt("age", 25);
+//		usersCollection.deleteMany(multiFilter);
+//		System.out.println("Multiple users deleted successfully.");
+	}
+//	
 
 	private static void connectToMongoDB() {
 		// Connect to local MongoDB
 
 		String localDBURL = "mongodb://localhost:27017";
-		//String cloudAtlasURL = "mongodb+srv://atrain:nLOo4TaR1HW12e9N@cluster0.ixxay.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0";
+		String cloudAtlasURL = "mongodb+srv://atrain:nLOo4TaR1HW12e9N@cluster0.ixxay.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0";
 
 		mongoClient = MongoClients.create(localDBURL);
 
