@@ -1,13 +1,14 @@
 package com.sl;
 
-import java.util.Arrays;
-
 import org.bson.Document;
+import org.bson.conversions.Bson;
 
 import com.mongodb.client.MongoClient;
 import com.mongodb.client.MongoClients;
 import com.mongodb.client.MongoCollection;
 import com.mongodb.client.MongoDatabase;
+import com.mongodb.client.model.Filters;
+import com.mongodb.client.model.Updates;
 
 public class MongoDemo {
 
@@ -19,11 +20,12 @@ public class MongoDemo {
 		
 		connectToMongoDB();
 		
-		Document user = new Document("name", "Jasprit").append("age", 30).append("email", "jassy@example.com")
-				.append("address", new Document("city", "New York").append("country", "USA"))
-				.append("hobbies", Arrays.asList("reading", "swimming"));
-		
-		usersCollection.insertOne(user);
+//		Document user = new Document("name", "Jasprit2").append("age", 35).append("email", "jassy@example.com")
+//				.append("address", new Document("city", "New Jersey").append("country", "USA"))
+//				.append("eduaction", "MBA");
+//		
+//		//usersCollection.insertOne(user);
+		updateUser();
 		
 		readUsers();
 
@@ -33,6 +35,22 @@ public class MongoDemo {
 		// Find all users
 		System.out.println("\nAll users:");
 		usersCollection.find().forEach(doc -> System.out.println(doc.toJson()));		
+	}
+	
+	private static void updateUser() {
+		// Update one user
+		Bson filter = Filters.eq("name", "Jasprit2");
+		Bson update = Updates.combine(Updates.set("age", 31), Updates.set("email", "abc@example.com"));
+
+		usersCollection.updateOne(filter, update);
+		System.out.println("User updated successfully.");
+
+		// Update multiple users
+//		Bson multiFilter = Filters.eq("age", 35);
+//		Bson multiUpdate = Updates.inc("age", 100);
+//
+//		usersCollection.updateMany(multiFilter, multiUpdate);
+//		System.out.println("Multiple users updated successfully.");
 	}
 	
 
