@@ -39,9 +39,8 @@ public class CartServlet extends HttpServlet {
 			List<Product> productsInTheCart = (List<Product>) session.getAttribute("products");
 			
 			for(Product prod : productsInTheCart) {
-				out.println("<p>  Found the following in the cart " + prod.getName());
-				out.println("<p>  Found the following in the cart " + prod.getPrice());
-			}
+				out.println("<p>  Found a product in the cart " + prod.getName() + ", "+ prod.getPrice());
+			};
 			
 			out.println("<p>  <a href='Servlet1' >Go to Servlet 1 </a>");
 			out.println("<p>  <a href='Servlet2' >Go to Servlet 2 </a>");
