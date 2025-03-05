@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns="https://jakarta.ee/xml/ns/jakartaee"
+	xsi:schemaLocation="https://jakarta.ee/xml/ns/jakartaee https://jakarta.ee/xml/ns/jakartaee/web-app_6_0.xsd"
+	id="WebApp_ID" version="6.0">
+	<display-name>ServletDemo2</display-name>
+	<welcome-file-list>
+		<welcome-file>index.html</welcome-file>
+		<welcome-file>index.jsp</welcome-file>
+		<welcome-file>index.htm</welcome-file>
+		<welcome-file>default.html</welcome-file>
+		<welcome-file>default.jsp</welcome-file>
+		<welcome-file>default.htm</welcome-file>
+	</welcome-file-list>
+	
+	<context-param>
+	<param-name>DBURL</param-name>
+	<param-value>mongodb://localhost:27017</param-value>
+	</context-param>
+
+	<servlet>
+		<servlet-name>LCServlet</servlet-name>
+		<servlet-class>com.sl.LCServlet</servlet-class>
+		<init-param>
+			<param-name>var1</param-name>
+			<param-value>10</param-value>
+		</init-param>
+	</servlet>
+
+	<servlet-mapping>
+		<servlet-name>LCServlet</servlet-name>
+		<url-pattern>/LCServlet1</url-pattern>
+	</servlet-mapping>
+
+
+</web-app>
