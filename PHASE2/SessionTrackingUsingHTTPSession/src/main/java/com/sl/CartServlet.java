@@ -2,7 +2,9 @@ package com.sl;
 
 import java.io.IOException;
 import java.io.PrintWriter;
-import java.util.Random;
+import java.util.List;
+
+import com.sl.entities.Product;
 
 import jakarta.servlet.ServletException;
 import jakarta.servlet.annotation.WebServlet;
@@ -32,6 +34,15 @@ public class CartServlet extends HttpServlet {
 			out.println("<p>  <a href='Servlet' >Go to Servlet 2 </a>");
 		} else {
 			out.println(" Session found in the request.");
+			
+			// List all products in the cart
+			List<Product> productsInTheCart = (List<Product>) session.getAttribute("products");
+			
+			for(Product prod : productsInTheCart) {
+				out.println("<p>  Found the following in the cart " + prod.getName());
+				out.println("<p>  Found the following in the cart " + prod.getPrice());
+			}
+			
 			out.println("<p>  <a href='Servlet1' >Go to Servlet 1 </a>");
 			out.println("<p>  <a href='Servlet2' >Go to Servlet 2 </a>");
 		}
