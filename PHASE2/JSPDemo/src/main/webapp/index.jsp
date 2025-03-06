@@ -11,5 +11,7 @@
 <a href="hello-world.jsp"> Hello World JSP</a>    |    
 <a href="hello-world2.jsp"> Hello World 2 JSP</a>
 
+<a href="declaration-tag-demo.jsp"> Declaration Tag Demo </a> 
+
 </body>
 </html>
