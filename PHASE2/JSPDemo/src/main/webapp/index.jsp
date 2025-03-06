@@ -13,6 +13,7 @@
 
 <a href="declaration-tag-demo.jsp"> Declaration Tag Demo </a>     |   
 <a href="declaration-tag-demo2.jsp"> Declaration Tag Demo 2 </a>     |   
+<a href="declaration-tag-demo3.jsp"> Declaration Tag Demo 3 (method decl demo)</a>     |   
 
 </body>
 </html>
