@@ -21,5 +21,8 @@
 <br><br>
 <a href="error-handling-demo.jsp"> Exception Handling Demo </a>     |   
 
+<br><br>
+<a href=include-directive-demo.jsp> Include Directive Demo </a>  
+
 </body>
 </html>
