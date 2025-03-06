@@ -9,9 +9,10 @@
 <body>
 
 <a href="hello-world.jsp"> Hello World JSP</a>    |    
-<a href="hello-world2.jsp"> Hello World 2 JSP</a>
+<a href="hello-world2.jsp"> Hello World 2 JSP</a>    |   
 
-<a href="declaration-tag-demo.jsp"> Declaration Tag Demo </a> 
+<a href="declaration-tag-demo.jsp"> Declaration Tag Demo </a>     |   
+<a href="declaration-tag-demo2.jsp"> Declaration Tag Demo 2 </a>     |   
 
 </body>
 </html>
