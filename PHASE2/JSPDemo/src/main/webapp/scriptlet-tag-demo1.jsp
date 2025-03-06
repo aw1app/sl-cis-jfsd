@@ -1,12 +1,14 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-	pageEncoding="UTF-8"%>
+	pageEncoding="UTF-8" import="java.util.Date"%>
 <!DOCTYPE html>
 <html>
+
+Date : <%=new Date() %>
 
 <body>
 	<%!String[] names = { "Sameer", "Shisir", "Prakash", "Suma", "Lara" };%>
 
-	<h3>Approach 1:</h3>
+	<h3>Approach 1 (using built-in out object within scriptlet block to print something):</h3>
 	Attendees today:
 	<br>
 	<%
@@ -15,7 +17,7 @@
 	}
 	%>
 
-	<h3>Approach 2:</h3>
+	<h3>Approach 2 using expression tag within/outside scriptlet block to print something):</h3>
 	Attendees today:
 	<br>
 	<ol>
