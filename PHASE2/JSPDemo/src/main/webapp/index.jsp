@@ -15,5 +15,8 @@
 <a href="declaration-tag-demo2.jsp"> Declaration Tag Demo 2 </a>     |   
 <a href="declaration-tag-demo3.jsp"> Declaration Tag Demo 3 (method decl demo)</a>     |   
 
+<br>
+<a href="scriptlet-tag-demo1.jsp"> Scriptlet Tag Demo 1 </a>     |   
+
 </body>
 </html>
