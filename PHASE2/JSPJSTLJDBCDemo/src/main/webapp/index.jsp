@@ -4,7 +4,9 @@
 <%@ taglib prefix="c" uri="jakarta.tags.core"%>    
 <!DOCTYPE html>
 
-<c:set var="x" value="100" />
-<c:out value="${x}" />
+<div>
+	<a href="index.jsp"> HOME</a> | 
+	<a href="products.jsp">PRODUCTS LIST</a>	 |    
+	<a href="add-product.html"> NEW PRODUCT</a>	 |    
+</div>
 
-<a href="products.jsp">PRODUCTS LIST</a>

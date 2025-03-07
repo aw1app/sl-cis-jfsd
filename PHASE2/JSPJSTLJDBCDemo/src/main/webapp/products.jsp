@@ -5,6 +5,9 @@
 <%@ taglib prefix="sql" uri="jakarta.tags.sql"%>
 
 <!DOCTYPE html>
+<div>
+	<a href="index.jsp"> HOME</a> | 	
+</div>
 
 <sql:setDataSource var="myEstore" driver="com.mysql.cj.jdbc.Driver"
 	url="jdbc:mysql://localhost:3306/estore" user="root"
@@ -15,16 +18,22 @@
 </sql:query>
 
 <br>
-<h2 style="text-align:center">LIST OF PRODUCTS</h2>
+<h2 style="text-align: center">LIST OF PRODUCTS</h2>
 <center>
-<table border=1 style="text-align:center">
-	<c:forEach var="row" items="${resultSet.rows}">
-		<tr style="background-color:lightgrey">
-			<td>${row.id}
-			<td>${row.name}
-			<td>${row.category}
-			<td>${row.price}
+	<table border=1 style="text-align: center">
+		<tr style="background-color: lightgrey">
+			<th>ID
+			<th>NAME
+			<th>PRICE
+			<th>CATEGORY
 		</tr>
-	</c:forEach>
-</table>
+		<c:forEach var="row" items="${resultSet.rows}">
+			<tr>
+				<td>${row.id}
+				<td>${row.name}
+				<td>${row.category}
+				<td>${row.price}
+			</tr>
+		</c:forEach>
+	</table>
 </center>
