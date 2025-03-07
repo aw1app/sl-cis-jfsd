@@ -31,6 +31,8 @@
 			<th>NAME
 			<th>PRICE
 			<th>CATEGORY
+			<th>EDIT
+			<th>DELETE
 		</tr>
 		<c:forEach var="row" items="${resultSet.rows}">
 			<tr>
@@ -38,6 +40,8 @@
 				<td>${row.name}
 				<td>${row.category}
 				<td>${row.price}
+				<td><a href="edit-product.jsp?id=${row.id}" > EDIT </a>
+				<td><a href="delete-product.jsp?id=${row.id}" > DELETE </a>
 			</tr>
 		</c:forEach>
 	</table>
