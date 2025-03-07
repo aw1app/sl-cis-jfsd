@@ -6,7 +6,7 @@
 
 <!DOCTYPE html>
 <div>
-	<a href="index.jsp"> HOME</a> | 	
+	<a href="index.jsp"> HOME</a> |
 </div>
 
 <sql:setDataSource var="myEstore" driver="com.mysql.cj.jdbc.Driver"
@@ -17,5 +17,10 @@
 	INSERT INTO PRODUCTS(name,price,category) VALUES ('${param.name}',${param.price}, '${param.category}')
 </sql:update>
 
-<br> <c:out value="${count}" /> no of rows inserted successfully!
+<br>
+<c:out value="${count}" />no of rows inserted successfully!
+
+<c:if test="${count > 0 }">
+	<c:redirect url="products.jsp"></c:redirect>
+</c:if>
 
