@@ -18,9 +18,9 @@
 </sql:update>
 
 <br>
-<c:out value="${count}" />no of rows inserted successfully!
+
 
 <c:if test="${count > 0 }">
-	<c:redirect url="products.jsp"></c:redirect>
+	<c:redirect url="products.jsp?message=${count} no of products inserted successfully!"></c:redirect>
 </c:if>
 

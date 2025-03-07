@@ -8,6 +8,11 @@
 <div>
 	<a href="index.jsp"> HOME</a> | 	
 </div>
+<center>
+	<c:if test="${not empty param.message}">
+	${param.message}
+	</c:if>
+</center>
 
 <sql:setDataSource var="myEstore" driver="com.mysql.cj.jdbc.Driver"
 	url="jdbc:mysql://localhost:3306/estore" user="root"
