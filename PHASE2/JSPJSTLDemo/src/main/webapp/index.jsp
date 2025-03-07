@@ -24,12 +24,12 @@
 	<!-- Looping into an array using a counter -->
 	<h2>Looping into an array using a counter</h2>
 	<c:forEach var="j" begin="1" end="5" step="2">
- Item <c:out value="${j}" />
+ 		Item <c:out value="${j}" />
 		<p>
 	</c:forEach>
 
 	<!-- Looping into a tokenized string -->
-	<h2>Looping into a tokenized string. String is "Jack-Lynda-Rose"</h2>
+	<h2>Looping into a tokenized string. String is "Jack-Lynda-Rose" .</h2>
 	<c:forTokens items="Jack-Lynda-Rose" delims="-" var="name">
 		<c:out value="${name}" />
 		<p>
@@ -72,7 +72,9 @@
 	<br>
 	<br>
 	<p>
-		ADVANCED examples <br> <a href="jstl-catch-demo.jsp">Catch
-			Demo</a>
+		ADVANCED examples <br> 
+		<a href="jstl-catch-demo.jsp">Catch Demo</a>
+		<a href="URLParamTagDemo.jsp">URL Param Demo</a>
+		
 </body>
 </html>
