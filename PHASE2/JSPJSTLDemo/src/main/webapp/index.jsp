@@ -1,4 +1,5 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"	pageEncoding="UTF-8"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+	pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="jakarta.tags.core"%>
 <!DOCTYPE html>
 
@@ -12,11 +13,27 @@
 	<c:set var="items" value="apple,mango" />
 
 	<!-- Looping into an array -->
+	<h2>Looping into an array without a counter just like we loop a
+		ArrayList</h2>
 	<ul>
 		<c:forEach var="item" items="${items}">
 			<li>${item}</li>
 		</c:forEach>
 	</ul>
+
+	<!-- Looping into an array using a counter -->
+	<h2>Looping into an array using a counter</h2>
+	<c:forEach var="j" begin="1" end="5" step="2">
+ Item <c:out value="${j}" />
+		<p>
+	</c:forEach>
+
+	<!-- Looping into a tokenized string -->
+	<h2>Looping into a tokenized string. String is "Jack-Lynda-Rose"</h2>
+	<c:forTokens items="Jack-Lynda-Rose" delims="-" var="name">
+		<c:out value="${name}" />
+		<p>
+	</c:forTokens>
 
 
 	<%
@@ -41,16 +58,21 @@
 		<c:when test="${userRole == 'admin'}">
 			<p>Welcome, Admin! You have full access.</p>
 		</c:when>
-		
+
 		<c:when test="${userRole == 'editor'}">
 			<p>Welcome, Editor! You have editor access.</p>
 		</c:when>
 
 		<c:otherwise>
-            <p>Welcome, Viewer! You can only view content.</p>
-        </c:otherwise>		
+			<p>Welcome, Viewer! You can only view content.</p>
+		</c:otherwise>
 
 	</c:choose>
 
+	<br>
+	<br>
+	<p>
+		ADVANCED examples <br> <a href="jstl-catch-demo.jsp">Catch
+			Demo</a>
 </body>
 </html>
