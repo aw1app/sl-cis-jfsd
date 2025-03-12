@@ -11,6 +11,5 @@ if (request.getParameter("username").equals("admin") && request.getParameter("pa
 	out.println("Login successfull!");
 } else {
 	out.println("Invalid username / password!");
-	out.println("<a href='login-form.jsp' > GO BACK TO LOGIN </a>");
 }
 %>
