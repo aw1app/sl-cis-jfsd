@@ -55,4 +55,8 @@
 <h3 style="color:red"> You need to be logged in to see the list of products! </h3>
 <%	}   %>
 
-
+<!-- 
+CHALLENGE: 
+1. Always display product list page irrespective of the user logged in or not
+2. Display the Edit and Delete action links only if the user is logged in
+ -->
