@@ -7,6 +7,10 @@
 <!DOCTYPE html>
 <jsp:include page="header.jsp" />
 
+<%	if (session!=null && session.getAttribute("loggedin")!= null && session.getAttribute("loggedin").equals("true")) {	%>
+	
+
+
 <center>
 	<c:if test="${not empty param.message}">
 	${param.message}
@@ -45,3 +49,10 @@
 		</c:forEach>
 	</table>
 </center>
+
+
+<%	} else {  %>
+<h3 style="color:red"> You need to be logged in to see the list of products! </h3>
+<%	}   %>
+
+

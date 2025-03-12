@@ -10,6 +10,7 @@
 	<a href="products.jsp">PRODUCTS LIST</a>	 |    
 	<a href="add-product-form.jsp"> ADD NEW PRODUCT</a>	 |             
 	
+	<!-- Display Login or logout links conditionally -->
 	<%	if (session!=null && session.getAttribute("loggedin")!= null && session.getAttribute("loggedin").equals("true")) {	%>
 	<a href="logout.jsp"> LOGOUT </a>
 	<%	} else {  %>
