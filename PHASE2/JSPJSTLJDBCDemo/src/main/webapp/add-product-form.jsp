@@ -1,8 +1,11 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+	pageEncoding="UTF-8"%>
+	
+	
 <!DOCTYPE html>
-<div>
-	<a href="index.jsp"> HOME</a> | 	
-</div>
-<h2>AD A NEW PRODUCT</h2>
+<jsp:include page="header.jsp" />
+
+<h2>ADD A NEW PRODUCT</h2>
 <form action="add-product.jsp" method="POST">
 
 	<br>Name: <input name="name"> <br>

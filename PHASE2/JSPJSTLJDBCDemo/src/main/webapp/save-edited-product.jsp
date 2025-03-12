@@ -5,9 +5,7 @@
 <%@ taglib prefix="sql" uri="jakarta.tags.sql"%>
 
 <!DOCTYPE html>
-<div>
-	<a href="index.jsp"> HOME</a> |
-</div>
+<jsp:include page="header.jsp" />
 
 <sql:setDataSource var="myEstore" driver="com.mysql.cj.jdbc.Driver"
 	url="jdbc:mysql://localhost:3306/estore" user="root"

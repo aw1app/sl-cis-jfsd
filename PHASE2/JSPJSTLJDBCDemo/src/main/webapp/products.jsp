@@ -5,9 +5,8 @@
 <%@ taglib prefix="sql" uri="jakarta.tags.sql"%>
 
 <!DOCTYPE html>
-<div>
-	<a href="index.jsp"> HOME</a> | 	
-</div>
+<jsp:include page="header.jsp" />
+
 <center>
 	<c:if test="${not empty param.message}">
 	${param.message}

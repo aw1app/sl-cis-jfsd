@@ -4,9 +4,5 @@
 <%@ taglib prefix="c" uri="jakarta.tags.core"%>    
 <!DOCTYPE html>
 
-<div>
-	<a href="index.jsp"> HOME</a> | 
-	<a href="products.jsp">PRODUCTS LIST</a>	 |    
-	<a href="add-product.html"> NEW PRODUCT</a>	 |    
-</div>
+<jsp:include page="header.jsp" />
 
