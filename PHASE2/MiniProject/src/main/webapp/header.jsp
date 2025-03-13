@@ -4,7 +4,7 @@
 <%@ taglib prefix="c" uri="jakarta.tags.core"%>    
 <!DOCTYPE html>
 <head>
-    <link rel="stylesheet" type="text/css" href="global.css">
+    <link rel="stylesheet" type="text/css" href="CSS/global.css">
 </head>
 
 <!--  ToolBar links in the header  -->

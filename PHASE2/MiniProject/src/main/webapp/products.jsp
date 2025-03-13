@@ -7,7 +7,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <link rel="stylesheet" type="text/css" href="products.css">
+    <link rel="stylesheet" type="text/css" href="CSS/products.css">
 </head>
 <body>
 

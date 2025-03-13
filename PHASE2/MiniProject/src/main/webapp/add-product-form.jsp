@@ -5,7 +5,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <link rel="stylesheet" type="text/css" href="add-edit-product.css">
+    <link rel="stylesheet" type="text/css" href="CSS/add-edit-product.css">
 </head>
 <body>
 
