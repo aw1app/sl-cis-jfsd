@@ -1,5 +1,6 @@
 package com.sl;
 
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 import java.util.Set;
@@ -96,7 +97,24 @@ public class App {
         System.out.println("Max: " + max); // Output: Sum: 40
         
         
-       
+        // Product object stream
+        System.out.println("\n\n\n\n Stream objects (non primitive types) demo ");
+        List<Product> products = new ArrayList<Product>();
+        products.add(new Product("Phone", 10000));
+        products.add(new Product("Mouse", 500));
+        products.add(new Product("Keyboard", 100));
+        products.add(new Product("GPU", 50000));
+        System.out.println("\n\n products list : ");
+        products.forEach( prod -> System.out.println(prod.getName() + ", " + prod.getPrice()));
+        
+        
+       //Filtering
+        List<Product> productsPricedGT500 = products
+        .stream()
+        .filter( prod -> prod.getPrice() > 500 ) /* Phone, GPU */
+        .toList();
+        System.out.println("\n productsPricedGT500  list :  ");
+        productsPricedGT500.forEach(prod -> System.out.println(prod.getName() + ", " + prod.getPrice()));
 
 	}
 }
