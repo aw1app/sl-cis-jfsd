@@ -5,17 +5,13 @@
 <%@ taglib prefix="sql" uri="jakarta.tags.sql"%>
 
 <!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" type="text/css" href="products.css">
+</head>
+<body>
+
 <jsp:include page="header.jsp" />
-
-<%	if (session!=null && session.getAttribute("loggedin")!= null && session.getAttribute("loggedin").equals("true")) {	%>
-	
-
-
-<center>
-	<c:if test="${not empty param.message}">
-	${param.message}
-	</c:if>
-</center>
 
 <sql:setDataSource var="myEstore" driver="com.mysql.cj.jdbc.Driver"
 	url="jdbc:mysql://localhost:3306/estore" user="root"
@@ -25,35 +21,49 @@
 	SELECT * FROM products
 </sql:query>
 
-<br>
-<h2 style="text-align: center">LIST OF PRODUCTS</h2>
-<center>
-	<table border=1 style="text-align: center">
-		<tr style="background-color: lightgrey">
-			<th>ID
-			<th>NAME
-			<th>PRICE
-			<th>CATEGORY
-			<th>EDIT
-			<th>DELETE
-		</tr>
-		<c:forEach var="row" items="${resultSet.rows}">
-			<tr>
-				<td>${row.id}
-				<td>${row.name}
-				<td>${row.category}
-				<td>${row.price}
-				<td><a href="edit-product.jsp?id=${row.id}" > EDIT </a>
-				<td><a href="delete-product.jsp?id=${row.id}" > DELETE </a>
-			</tr>
-		</c:forEach>
-	</table>
-</center>
+<div class="container">
+    <c:if test="${not empty param.message}">
+        <div class="message">${param.message}</div>
+    </c:if>
 
+    <h2>LIST OF PRODUCTS</h2>
 
-<%	} else {  %>
-<h3 style="color:red"> You need to be logged in to see the list of products! </h3>
-<%	}   %>
+    <table>
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>NAME</th>
+                <th>PRICE</th>
+                <th>CATEGORY</th>
+                <c:if test="${sessionScope.loggedin eq 'true'}">
+                    <th>EDIT</th>
+                    <th>DELETE</th>
+                </c:if>
+            </tr>
+        </thead>
+        <tbody>
+            <c:forEach var="row" items="${resultSet.rows}">
+                <tr>
+                    <td>${row.id}</td>
+                    <td>${row.name}</td>
+                    <td>${row.price}</td>
+                    <td>${row.category}</td>
+                    <c:if test="${sessionScope.loggedin eq 'true'}">
+                        <td><a href="edit-product.jsp?id=${row.id}" class="btn edit">EDIT</a></td>
+                        <td><a href="delete-product.jsp?id=${row.id}" class="btn delete">DELETE</a></td>
+                    </c:if>
+                </tr>
+            </c:forEach>
+        </tbody>
+    </table>
+
+    <c:if test="${sessionScope.loggedin ne 'true'}">
+        <p class="alert">You need to be logged in to edit or delete products.</p>
+    </c:if>
+</div>
+
+</body>
+</html>
 
 <!-- 
 CHALLENGE: 
