@@ -8,12 +8,13 @@ public class App {
 		System.out.println("Java Streams Demo");
 
 		// Creating Stream from values
-		Stream<String> langStream = Stream.of("Java", "Python", "C++", "JavaScript", "C#", "Rust");
+		Stream<String> langStream = Stream.of("Java", "Python", "C++", "JavaScript", "C#", "Rust", "C");
 
 		System.out.println(" No of elements in stream  langStream = " + langStream.count());
 		
 		
-		List<String> langList = List.of("Java", "Python", "C++", "JavaScript", "C#", "Rust");
+		// Creating Streams from Collections like list, set
+		List<String> langList = List.of("Java", "Python", "C++", "JavaScript", "C#", "Rust", "C");
 		
 
 		// Filtering
@@ -26,13 +27,21 @@ public class App {
 		
 		
 		// Limiting 
-		List<String> langSListLimitedTo2Elements = langList
+		List<String> langSListLimitedTo3Elements = langList
 				.stream()
 				.limit(3)
 				.toList();
 		
-		System.out.println(" No of elements in collection  langStreamLimitedTo2Elements = " + langSListLimitedTo2Elements.size());
-		System.out.println("langStreamLimitedTo2Elements Elements are " +langSListLimitedTo2Elements );
+		System.out.println(" No of elements in collection  langStreamLimitedTo2Elements = " + langSListLimitedTo3Elements.size());
+		System.out.println("langStreamLimitedTo2Elements Elements are " +langSListLimitedTo3Elements );
+		
+		//Filtering and Limiting
+		
+		List<String> langListFilteredAndLimited = langList.stream()
+		.filter(elem -> elem.startsWith("C"))  /* 3 elements "C++" "C#"  "C" */
+		.limit(2)   /* 2 elements "C++" "C#"  */
+		.toList();
+		System.out.println("\n langListFilteredAndLimited Elements are " + langListFilteredAndLimited );
 		
 
 	}
