@@ -14,10 +14,13 @@ public class App {
 		
 		
 		// Creating Streams from Collections like list, set
+		System.out.println("\n Creating Streams from Collections like List, Set  demo ");
 		List<String> langList = List.of("Java", "Python", "C++", "JavaScript", "C#", "Rust", "C");
+		System.out.println("langList elements  are " + langList);
 		
 
 		// Filtering
+		System.out.println("\n Filtering  only  demo ");
 		List<String> langListStartingWithJ = langList
 				.stream()
 				.filter(elem -> elem.startsWith("J"))
@@ -27,6 +30,7 @@ public class App {
 		
 		
 		// Limiting 
+		System.out.println("\n Limiting only demo ");
 		List<String> langSListLimitedTo3Elements = langList
 				.stream()
 				.limit(3)
@@ -36,12 +40,12 @@ public class App {
 		System.out.println("langStreamLimitedTo2Elements Elements are " +langSListLimitedTo3Elements );
 		
 		//Filtering and Limiting
-		
+		System.out.println("\n Filtering and Limiting demo ");
 		List<String> langListFilteredAndLimited = langList.stream()
 		.filter(elem -> elem.startsWith("C"))  /* 3 elements "C++" "C#"  "C" */
 		.limit(2)   /* 2 elements "C++" "C#"  */
 		.toList();
-		System.out.println("\n langListFilteredAndLimited Elements are " + langListFilteredAndLimited );
+		System.out.println("langListFilteredAndLimited Elements are " + langListFilteredAndLimited );
 		
 
 	}
