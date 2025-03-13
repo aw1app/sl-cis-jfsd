@@ -115,6 +115,9 @@ public class App {
         .toList();
         System.out.println("\n productsPricedGT500  list :  ");
         productsPricedGT500.forEach(prod -> System.out.println(prod.getName() + ", " + prod.getPrice()));
+        
+        //CHALLENGE:
+        //Display top 3 cheap products 
 
 	}
 }
