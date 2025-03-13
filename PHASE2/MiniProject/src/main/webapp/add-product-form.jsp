@@ -3,17 +3,40 @@
 	
 	
 <!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" type="text/css" href="add-edit-product.css">
+</head>
+<body>
+
 <jsp:include page="header.jsp" />
 
-<h2>ADD A NEW PRODUCT</h2>
-<form action="add-product.jsp" method="POST">
+<div class="container">
+    <h2>Add a New Product</h2>
 
-	<br>Name: <input name="name"> <br>
-	<br>Price: <input name="price"> <br>
-	<br>Category: <input name="category"> <br>
-	<br>
-	<input type="submit" value="Submit">
+    <form action="add-product.jsp" method="POST" class="add-form">
+        <div class="form-group">
+            <label for="name">Product Name:</label>
+            <input type="text" id="name" name="name" required>
+        </div>
 
-</form>
+        <div class="form-group">
+            <label for="price">Price:</label>
+            <input type="text" id="price" name="price" required>
+        </div>
+
+        <div class="form-group">
+            <label for="category">Category:</label>
+            <input type="text" id="category" name="category" required>
+        </div>
+
+<br><br>
+        <button type="submit" class="btn add">Add Product</button>
+    </form>
+</div>
+
+</body>
+</html>
+
 
 

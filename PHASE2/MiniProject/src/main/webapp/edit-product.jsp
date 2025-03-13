@@ -5,6 +5,12 @@
 <%@ taglib prefix="sql" uri="jakarta.tags.sql"%>
 
 <!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" type="text/css" href="add-edit-product.css">
+</head>
+<body>
+
 <jsp:include page="header.jsp" />
 
 <sql:setDataSource var="myEstore" driver="com.mysql.cj.jdbc.Driver"
@@ -15,22 +21,40 @@
 	SELECT * FROM products WHERE id='${param.id}'
 </sql:query>
 
-<br>
+<div class="container">
+    <h2>Edit Product</h2>
 
-<c:forEach var="row" items="${resultSet.rows}">
+    <c:forEach var="row" items="${resultSet.rows}">
+        <form action="save-edited-product.jsp" method="post" class="edit-form">
+            <input name="id" value="${row.id}" type="hidden">
+            
+            <br>
 
-	<form action="save-edited-product.jsp" method="post">
+            <div class="form-group">
+                <label for="name">Name:</label>
+                <input type="text" id="name" value="${row.name}" disabled>
+            </div>
+            
+          
 
-		<br><input name="id" value="${row.id}" type="hidden"> <br>
-		<br>Name: ${row.name } <br>
-		<br>Price: <input name="price" value="${row.price}"> <br>
-		<br>Category: <input name="category" value="${row.category}">
+            <div class="form-group">
+                <label for="price">Price:</label>
+                <input type="text" id="price" name="price" value="${row.price}" required>
+            </div>
+            
+            
 
-		<br>
-		<br>
-		<input type="submit" value="Submit">
+            <div class="form-group">
+                <label for="category">Category:</label>
+                <input type="text" id="category" name="category" value="${row.category}" required>
+            </div>
+            
+            <br>
 
-	</form>
+            <button type="submit" class="btn save">Save Changes</button>
+        </form>
+    </c:forEach>
+</div>
 
-</c:forEach>
-
+</body>
+</html>
