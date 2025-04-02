@@ -13,14 +13,12 @@ class CalculatorTest {
 		int a = 3;
 		int b = 2;
 		
-		int expectedResult = 5;
-		
+		int expectedResult = 5;		
 		
 		int actualresult = calc.add(a, b); 
 		
 		// assertion
-		assertEquals(actualresult,expectedResult);
-		
+		assertEquals(expectedResult, actualresult);		
 	}
 	
 	@Test
@@ -30,14 +28,12 @@ class CalculatorTest {
 		int a = -3;
 		int b = -2;
 		
-		int expectedResult = -5;
-		
+		int expectedResult = -5;		
 		
 		int actualresult = calc.add(a, b); 
 		
 		// assertion
-		assertEquals(actualresult,expectedResult);
-		
+		assertEquals(expectedResult, actualresult);			
 	}
 	
 }
