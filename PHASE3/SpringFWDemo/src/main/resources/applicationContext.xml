@@ -8,5 +8,11 @@
         <constructor-arg value="Some Desc" />
         <constructor-arg value="999" type="float"/>
     </bean>
+    
+    <bean id="product2" class="com.sl.Product">
+        <property name="name" value="SSD Drive" />
+		<property name="price" value="99" />
+		<property name="desc" value="High Quality 7000 MB/sec SSD" />
+    </bean>
 
 </beans>
