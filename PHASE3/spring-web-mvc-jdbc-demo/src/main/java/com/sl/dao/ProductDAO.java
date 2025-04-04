@@ -28,7 +28,12 @@ public class ProductDAO {
 		return productJdbcTemplate.query("SELECT * FROM PRODUCTS", new ProductRowMapper()  );
 	}
 	
-	//2 
+	// 2. Update product price by product ID
+	public int updateProductPrice(int productId, float newPrice) {
+	    String sql = "UPDATE PRODUCTS SET price = ? WHERE id = ?";
+	    return productJdbcTemplate.update(sql, newPrice, productId);
+	}
+
 
 }
 
