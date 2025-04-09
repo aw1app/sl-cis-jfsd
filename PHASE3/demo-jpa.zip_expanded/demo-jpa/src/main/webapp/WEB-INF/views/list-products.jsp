@@ -4,6 +4,9 @@
 
 <%@ taglib prefix="c" uri="jakarta.tags.core"%>
 
+<%@include file="/header.jsp"  %>
+
+
 <h2>PRODUCTS LIST</h2>
 
 <table border="1">

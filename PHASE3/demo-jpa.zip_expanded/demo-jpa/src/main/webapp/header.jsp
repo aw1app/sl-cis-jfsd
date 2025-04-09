@@ -7,8 +7,9 @@
 </head>
 <body>
 
-<a href="index.jsp"> HOME </a>
-<a href="list-products"> PRODUCTS LIST </a>
+<a href="index.jsp"> HOME </a> | 
+<a href="list-products"> PRODUCTS LIST </a> | 
+<a href="add-product"> ADD PRODUCT</a>
 
 </body>
 </html>

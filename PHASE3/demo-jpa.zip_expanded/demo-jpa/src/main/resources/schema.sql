@@ -1,1 +1,1 @@
-CREATE table PRODUCTS(id int, name varchar(80), price decimal(10,2))
+CREATE table PRODUCTS(id int primary key auto_increment, name varchar(80), price decimal(10,2))
