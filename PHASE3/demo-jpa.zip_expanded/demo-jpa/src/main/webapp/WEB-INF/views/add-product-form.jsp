@@ -14,6 +14,6 @@
 <BR> NAME: <input name="name">
 <BR> PRICE: <input name="price">
 
-<BR><BR>  <input type="submit">
+<BR><BR>  <input type="submit" value="ADD PRODUCT" >
 
 </form>
