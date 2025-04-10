@@ -18,7 +18,8 @@
 	</a> |
 	<a href="/products-by-name-using-JPQL.jsp"> FIND PRODUCT BY NAME
 		(using custom JPQL) </a> |
-
+	<a href="/products-by-name-using-JPQL.jsp"> FIND PRODUCT BY NAME
+		(using native SQL) </a> |
 
 </body>
 </html>

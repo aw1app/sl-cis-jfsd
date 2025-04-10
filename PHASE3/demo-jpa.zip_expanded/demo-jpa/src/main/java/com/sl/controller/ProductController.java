@@ -105,6 +105,7 @@ public class ProductController {
 		return "list-products"; // resolve to list-products.jsp in WEB-INF/views
 	}
 	
+	//uses jpql query
 	@PostMapping("/find-by-name-using-custom-jpql")
 	public String myCustomJPQLgetAllProductsByName(Model model, @RequestParam("name") String name) {
 		List<Product> listOfProducts = productRepositry.mySearchProductsByName(name);
@@ -113,6 +114,16 @@ public class ProductController {
 
 		return "list-products"; // resolve to list-products.jsp in WEB-INF/views
 
+	}
+	
+	//uses native sql query
+	@PostMapping("/find-by-name-using-native-sql")
+	public String myCustomNativeSQLgetAllProductsByName(Model model, @RequestParam("name") String name) {
+		List<Product> listOfProducts = productRepositry.mySearchProductsByNameUsingNativeSQL(name);
+
+		model.addAttribute("listOfProducts", listOfProducts);
+
+		return "list-products"; // resolve to list-products.jsp in WEB-INF/views
 	}
 
 }
