@@ -103,6 +103,15 @@ public class ProductController {
 		model.addAttribute("listOfProducts", listOfProducts);
 
 		return "list-products"; // resolve to list-products.jsp in WEB-INF/views
+	}
+	
+	@PostMapping("/find-by-name-using-custom-jpql")
+	public String myCustomJPQLgetAllProductsByName(Model model, @RequestParam("name") String name) {
+		List<Product> listOfProducts = productRepositry.mySearchProductsByName(name);
+
+		model.addAttribute("listOfProducts", listOfProducts);
+
+		return "list-products"; // resolve to list-products.jsp in WEB-INF/views
 
 	}
 
