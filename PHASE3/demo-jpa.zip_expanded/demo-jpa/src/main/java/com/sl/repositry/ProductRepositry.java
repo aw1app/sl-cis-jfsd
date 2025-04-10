@@ -14,6 +14,10 @@ public interface ProductRepositry extends JpaRepository<Product, Integer>{
 	
 	List<Product> findByName(String name);
 	
-	List<Product> findByPrice(float price);
+	List<Product> findByNameContaining(String name);
+	
+	List<Product> findByPrice(float price);// Exact Price Match
+	
+	List<Product> findByPriceBetween(float price1, float price2 );// Range Price Match
 
 }

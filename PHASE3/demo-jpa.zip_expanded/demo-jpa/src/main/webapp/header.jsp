@@ -10,7 +10,10 @@
 <a href="index.jsp"> HOME </a> | 
 <a href="list-products"> PRODUCTS LIST </a> | 
 <a href="add-product"> ADD PRODUCT</a>   |   
+
+<BR>
 <a href="/products-by-name.jsp"> FIND PRODUCT BY NAME </a>   |   
+<a href="/products-by-price-range.jsp"> FIND PRODUCT BY PRICE RANGE </a>   |   
 
 </body>
 </html>

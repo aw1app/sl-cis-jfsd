@@ -87,7 +87,18 @@ public class ProductController {
 	// ADVANCED mapping
 	@PostMapping("/find-by-name")
 	public String getAllProductsByName(Model model, @RequestParam("name") String name) {
-		List<Product> listOfProducts = productRepositry.findByName(name);
+		List<Product> listOfProducts = productRepositry.findByNameContaining(name);
+
+		model.addAttribute("listOfProducts", listOfProducts);
+
+		return "list-products"; // resolve to list-products.jsp in WEB-INF/views
+
+	}
+	
+	@PostMapping("/find-by-price-range")
+	public String getAllProductsByPriceRange(Model model, 
+			@RequestParam("price1") float price1, @RequestParam("price2") float price2) {
+		List<Product> listOfProducts = productRepositry.findByPriceBetween(price1, price2);
 
 		model.addAttribute("listOfProducts", listOfProducts);
 
