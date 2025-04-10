@@ -1,9 +1,11 @@
 package com.sl.controller;
 
 import java.util.List;
+import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -32,6 +34,20 @@ public class ProductController {
 		Product createdProduct = productRepositry.save(product);
 		
 		return createdProduct;
+	}
+	
+	// DELETE A PRODUCT
+	@GetMapping("/delete/{id}")
+	public String addProduct(@PathVariable("id") int id){
+		Optional<Product> optionalProduct = productRepositry.findById(id);
+
+		if (optionalProduct.isPresent()) {
+			productRepositry.deleteById(id);
+			return "deleted";
+		}else {
+			return "not found";
+		}
+		
 	}
 	
 
