@@ -21,11 +21,24 @@ public class ProductController {
 	@Autowired
 	ProductRepositry productRepositry;
 	
+	// LIST ALL PRODUCTS
 	@GetMapping("/list")
 	public List<Product> getAllProducts(){
 		List<Product> listOfProducts = productRepositry.findAll();
 		
 		return listOfProducts;
+	}
+	
+	// DISPLAY SINGLE PRODUCT
+	@GetMapping("/details/{id}")
+	public Product getProduct(@PathVariable("id") int id){
+		Optional<Product> optionalProduct = productRepositry.findById(id);
+
+		Product p= null;
+		if (optionalProduct.isPresent()) {
+			p = optionalProduct.get();
+		}
+		return p;
 	}
 	
 	// INSERT A NEW PRODUCT
