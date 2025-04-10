@@ -57,16 +57,16 @@ public class ProductController {
 	@GetMapping("/edit-product")
 	public String showEditProductForm(Model model, @RequestParam("id") int id) {
 		Optional<Product> optionalProduct = productRepositry.findById(id);
-		
+
 		Product p = null;
-		if(optionalProduct.isPresent()) {
-			p= optionalProduct.get();
+		if (optionalProduct.isPresent()) {
+			p = optionalProduct.get();
 		}
 
 		model.addAttribute("product", p);
 		return "edit-product-form";
 	}
-	
+
 	@PostMapping("/edit-product")
 	public String saveEditedProduct(@ModelAttribute("product") Product product) {
 		productRepositry.save(product);
@@ -75,13 +75,24 @@ public class ProductController {
 	}
 
 	// EDIT PRODUCT END
-	
-	// DELETE PRODUCT 
+
+	// DELETE PRODUCT
 	@GetMapping("/delete-product")
 	public String deleteProduct(@RequestParam("id") int id) {
 		productRepositry.deleteById(id);
-		
+
 		return "redirect:/list-products";
+	}
+
+	// ADVANCED mapping
+	@PostMapping("/find-by-name")
+	public String getAllProductsByName(Model model, @RequestParam("name") String name) {
+		List<Product> listOfProducts = productRepositry.findByName(name);
+
+		model.addAttribute("listOfProducts", listOfProducts);
+
+		return "list-products"; // resolve to list-products.jsp in WEB-INF/views
+
 	}
 
 }
