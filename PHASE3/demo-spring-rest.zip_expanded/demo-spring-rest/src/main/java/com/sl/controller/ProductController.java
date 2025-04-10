@@ -18,53 +18,73 @@ import com.sl.repositry.ProductRepositry;
 @RestController
 @RequestMapping("/products")
 public class ProductController {
-	
+
 	@Autowired
 	ProductRepositry productRepositry;
-	
+
 	// LIST ALL PRODUCTS
 	@GetMapping("/list")
-	public List<Product> getAllProducts(){
+	public List<Product> getAllProducts() {
 		List<Product> listOfProducts = productRepositry.findAll();
-		
+
 		return listOfProducts;
 	}
-	
+
 	// DISPLAY SINGLE PRODUCT
 	@GetMapping("/details/{id}")
-	public ResponseEntity<Product> getProduct(@PathVariable("id") int id){
+	public ResponseEntity<Product> getProduct(@PathVariable("id") int id) {
 		Optional<Product> optionalProduct = productRepositry.findById(id);
 
-		Product p= null;
+		Product p = null;
 		if (optionalProduct.isPresent()) {
 			p = optionalProduct.get();
 			return ResponseEntity.ok().body(p);
 		}
-		
+
 		return ResponseEntity.notFound().build();
 	}
-	
+
 	// INSERT A NEW PRODUCT
 	@PostMapping("/add")
-	public Product addProduct(@RequestBody Product product){
+	public Product addProduct(@RequestBody Product product) {
 		Product createdProduct = productRepositry.save(product);
-		
+
 		return createdProduct;
 	}
-	
+
 	// DELETE A PRODUCT
 	@GetMapping("/delete/{id}")
-	public String addProduct(@PathVariable("id") int id){
+	public String addProduct(@PathVariable("id") int id) {
 		Optional<Product> optionalProduct = productRepositry.findById(id);
 
 		if (optionalProduct.isPresent()) {
 			productRepositry.deleteById(id);
 			return "deleted";
-		}else {
+		} else {
 			return "not found";
 		}
-		
+
 	}
-	
+
+	// EDIT A PRODUCT
+	@GetMapping("/update/{id}")
+	public ResponseEntity<Product> getProduct(@RequestBody Product product, @PathVariable("id") int id) {
+		Optional<Product> optionalProduct = productRepositry.findById(id);
+
+		Product p = null;
+		if (optionalProduct.isPresent()) {
+			p = optionalProduct.get();
+
+			// set the new name and price
+			p.setName(product.getName());
+			p.setPrice(product.getPrice());
+			
+			productRepositry.save(p);
+
+			return ResponseEntity.ok().body(p);
+		}
+
+		return ResponseEntity.notFound().build();
+	}
 
 }
