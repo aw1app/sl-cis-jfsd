@@ -1,86 +1,85 @@
 package com.sl.controller;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
 
 import com.sl.entity.Product;
-import com.sl.exception.MyException;
 import com.sl.exception.ProductException;
 import com.sl.repositry.ProductRepositry;
 
+import jakarta.validation.Valid;
+
 @Controller
 public class ProductController {
-	
+
 	@Autowired
 	ProductRepositry productRepositry;
-	
+
 	@GetMapping("/list-products")
 	public String listOfProducts(Model model) {
 
 		List<Product> listOfProducts = productRepositry.findAll();
 
 		model.addAttribute("listOfProducts", listOfProducts);
-		
-		// some conditions when we to throw our custom exception
-		// these are handled in the global exception handler
-		if(listOfProducts.isEmpty()) {
-			throw new MyException("no products in th list!");
-		}else if(listOfProducts.size() > 5) {
-			throw new MyException("too many products (>5) !");
-		}
-		
-//		 manually let's create a exception situation and observe how
-//		 end user will see this in thier browser
-		if(true)
-		throw new RuntimeException("Some error happened");
 
 		return "list-products"; // resolve list-products.jsp in WEB-INF/views
 	}
-	
-	
-	/*
-	
-	//Exception handling for above RuntimeException
-	@ExceptionHandler(RuntimeException.class)
-	public ResponseEntity<Object> handleRuntimeException( RuntimeException ex){
-//		
-//		Map<String, Object> error = new HashMap<>();
-//        error.put("timestamp", LocalDateTime.now());
-//        error.put("message", ex.getMessage());
-//        error.put("status", HttpStatus.NOT_FOUND.value());
-//        return new ResponseEntity<>(error, HttpStatus.NOT_FOUND);
-		
-		return new ResponseEntity<>(
-				"<b>OOPs!!</b> something went wrong. Contact our CC <i>900123456</i>",
-				HttpStatus.BAD_REQUEST
-				);
-		
+
+	// ADD PRODUCT START
+	@GetMapping("/add-product")
+	public String showAddProductForm(Model model) {
+		Product p = new Product();
+		model.addAttribute("product", p);
+		return "add-product-form";
 	}
-	
-	*/
-	
-	
+
+	@PostMapping("/add-product")
+	public String addProduct(@Valid Product product, BindingResult bindingResult) {
+		System.out.println("INSIDE addProduct of ProductController ..");
+		
+		System.out.println(bindingResult.hasErrors());
+		
+		if (bindingResult.hasErrors()) {
+			
+			// Get list of all errors
+	        List<String> errorMessages = new ArrayList<>();
+	        bindingResult.getFieldErrors().forEach(error -> {
+	            String message = error.getField() + ": " + error.getDefaultMessage();
+	            errorMessages.add(message);
+	        });
+	        errorMessages.forEach(System.out::println);
+			
+			return "add-product-form"; 
+		}
+
+		productRepositry.save(product);
+
+		return "redirect:/list-products";
+	}
+	// ADD PRODUCT END
+
 	@GetMapping("/details/{id}")
-	public String getProductDetails(Model model, @PathVariable("id") int id) throws ProductException{
+	public String getProductDetails(Model model, @PathVariable("id") int id) throws ProductException {
 		Optional<Product> optionalProduct = productRepositry.findById(id);
 
 		Product p = null;
 		if (optionalProduct.isPresent()) {
 			p = optionalProduct.get();
 			model.addAttribute("product", p);
-			return "product-details"; //goes to product-details.jsp	
-		}else {
+			return "product-details"; // goes to product-details.jsp
+		} else {
 			throw new ProductException("product with given id not found!");
-		}	
-		
-	}
-	
+		}
 
+	}
 
 }

@@ -6,6 +6,7 @@ import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.Table;
+import jakarta.validation.constraints.*;
 
 @Entity
 @Table(name="products")
@@ -15,8 +16,13 @@ public class Product {
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	int id;
 	
+	@NotBlank(message = "Product name must not be null")
+	@Pattern(regexp = "^.{3,8}$", message = "Product name must be between 3 and 8 characters long")
+	//@Size(min = 3, max=8, message = "Product name must atleast have 3 characters")	
+	//@Min(value= 3 , message = "Product name must atleast have 3 characters")
 	String name;
 	
+	@Min(value=10, message = "Product price must atleast have 2 digits")
 	@Column(name="price")
 	float price;
 

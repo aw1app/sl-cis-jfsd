@@ -9,7 +9,7 @@
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>com.sl</groupId>
-	<artifactId>demo-spring-exception-handling</artifactId>
+	<artifactId>demo-spring-input-validation</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<name>demo-spring-input-validation</name>
 	<description>Demo project for Spring Boot Input Validation</description>
@@ -38,6 +38,15 @@
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-web</artifactId>
 		</dependency>
+		
+	
+
+<dependency>
+    <groupId>org.hibernate.validator</groupId>
+    <artifactId>hibernate-validator-cdi</artifactId>
+    <version>8.0.2.Final</version>
+</dependency>
+
 
 		<dependency>
 			<groupId>com.h2database</groupId>
