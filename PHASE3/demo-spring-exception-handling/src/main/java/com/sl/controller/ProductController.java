@@ -14,6 +14,7 @@ import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.GetMapping;
 
 import com.sl.entity.Product;
+import com.sl.exception.MyException;
 import com.sl.repositry.ProductRepositry;
 
 @Controller
@@ -29,13 +30,23 @@ public class ProductController {
 
 		model.addAttribute("listOfProducts", listOfProducts);
 		
-		// manually let's create a exception situation and observe how
-		// end user will see this in thier browser
+		// some conditions when we to throw our custom exception
+		if(listOfProducts.isEmpty()) {
+			throw new MyException("no products in th list!");
+		}else if(listOfProducts.size() > 5) {
+			throw new MyException("too many products (>5) !");
+		}
+		
+//		 manually let's create a exception situation and observe how
+//		 end user will see this in thier browser
 		if(true)
 		throw new RuntimeException("Some error happened");
 
 		return "list-products"; // resolve list-products.jsp in WEB-INF/views
 	}
+	
+	
+	/*
 	
 	//Exception handling for above RuntimeException
 	@ExceptionHandler(RuntimeException.class)
@@ -49,9 +60,12 @@ public class ProductController {
 		
 		return new ResponseEntity<>(
 				"<b>OOPs!!</b> something went wrong. Contact our CC <i>900123456</i>",
-				HttpStatus.NOT_FOUND);
+				HttpStatus.BAD_REQUEST
+				);
 		
 	}
+	
+	*/
 
 
 }
