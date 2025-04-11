@@ -31,6 +31,7 @@ public class ProductController {
 		model.addAttribute("listOfProducts", listOfProducts);
 		
 		// some conditions when we to throw our custom exception
+		// these are handled in the global exception handler
 		if(listOfProducts.isEmpty()) {
 			throw new MyException("no products in th list!");
 		}else if(listOfProducts.size() > 5) {
