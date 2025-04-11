@@ -13,15 +13,25 @@ public class GlobalExceptionHandler {
 	public ResponseEntity<Object> handleMyException(MyException ex) {
 		System.out.println("INSIDE handleMyException of GlobalExceptionHandler class");
 
-		return new ResponseEntity<>("<b>Some thing went wrong. </b>"+ ex.getMessage() +". Contact our CC <i>88888888888</i>",
+		return new ResponseEntity<>(
+				"<b>Some thing went wrong. </b>" + ex.getMessage() + ". Contact our CC <i>88888888888</i>",
 				HttpStatus.BAD_REQUEST);
 
+	}
+
+	// Exception handling for above ProductException
+	@ExceptionHandler(ProductException.class)
+	public ResponseEntity<Object> handleProductException(ProductException ex) {
+
+		return new ResponseEntity<>(
+				"<b>" + ex.getMessage() + "</b>. Contact our Technical Team at <i>88888888888</i>",
+				HttpStatus.NOT_FOUND);
 	}
 
 	// Exception handling for above RuntimeException
 	@ExceptionHandler(RuntimeException.class)
 	public ResponseEntity<Object> handleRuntimeException(RuntimeException ex) {
-		
+
 		System.out.println("INSIDE handleRuntimeException of GlobalExceptionHandler class");
 
 		return new ResponseEntity<>("<b>OOPs!!</b> something went wrong. Contact our CC <i>900123456</i>",

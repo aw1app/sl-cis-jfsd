@@ -1,20 +1,17 @@
 package com.sl.controller;
 
-import java.time.LocalDateTime;
-import java.util.HashMap;
 import java.util.List;
-import java.util.Map;
+import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.HttpStatus;
-import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 
 import com.sl.entity.Product;
 import com.sl.exception.MyException;
+import com.sl.exception.ProductException;
 import com.sl.repositry.ProductRepositry;
 
 @Controller
@@ -67,6 +64,23 @@ public class ProductController {
 	}
 	
 	*/
+	
+	
+	@GetMapping("/details/{id}")
+	public String getProductDetails(Model model, @PathVariable("id") int id) throws ProductException{
+		Optional<Product> optionalProduct = productRepositry.findById(id);
+
+		Product p = null;
+		if (optionalProduct.isPresent()) {
+			p = optionalProduct.get();
+			model.addAttribute("product", p);
+			return "product-details"; //goes to product-details.jsp	
+		}else {
+			throw new ProductException("product with given id not found!");
+		}	
+		
+	}
+	
 
 
 }
