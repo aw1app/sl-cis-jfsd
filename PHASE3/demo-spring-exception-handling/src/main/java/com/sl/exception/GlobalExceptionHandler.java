@@ -8,10 +8,9 @@ import org.springframework.web.bind.annotation.ExceptionHandler;
 @ControllerAdvice
 public class GlobalExceptionHandler {
 
-	// Exception handling for above MyException
+	// Exception handling for MyException anywhere it is thrown in this project
 	@ExceptionHandler(MyException.class)
 	public ResponseEntity<Object> handleMyException(MyException ex) {
-		System.out.println("INSIDE handleMyException of GlobalExceptionHandler class");
 
 		return new ResponseEntity<>(
 				"<b>Some thing went wrong. </b>" + ex.getMessage() + ". Contact our CC <i>88888888888</i>",
@@ -19,7 +18,7 @@ public class GlobalExceptionHandler {
 
 	}
 
-	// Exception handling for above ProductException
+	// Exception handling for ProductException anywhere it is thrown in this project
 	@ExceptionHandler(ProductException.class)
 	public ResponseEntity<Object> handleProductException(ProductException ex) {
 
@@ -32,11 +31,8 @@ public class GlobalExceptionHandler {
 	@ExceptionHandler(RuntimeException.class)
 	public ResponseEntity<Object> handleRuntimeException(RuntimeException ex) {
 
-		System.out.println("INSIDE handleRuntimeException of GlobalExceptionHandler class");
-
 		return new ResponseEntity<>("<b>OOPs!!</b> something went wrong. Contact our CC <i>900123456</i>",
 				HttpStatus.BAD_REQUEST);
-
 	}
 
 }
