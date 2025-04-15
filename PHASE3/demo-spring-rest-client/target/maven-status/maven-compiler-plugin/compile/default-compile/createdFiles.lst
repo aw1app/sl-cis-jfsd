@@ -1,0 +1,4 @@
+com\sl\entity\Product.class
+com\sl\config\Config.class
+com\example\demo\DemoSpringRestClientApplication.class
+com\sl\controller\ProductController.class
