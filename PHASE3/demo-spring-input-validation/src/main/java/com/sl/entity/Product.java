@@ -23,6 +23,7 @@ public class Product {
 	String name;
 	
 	@Min(value=10, message = "Product price must atleast have 2 digits")
+	@Max(value=100000, message = "Product price must atmost be 100000")
 	@Column(name="price")
 	float price;
 

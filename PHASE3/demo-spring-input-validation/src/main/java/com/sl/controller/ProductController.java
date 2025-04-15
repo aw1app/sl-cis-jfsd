@@ -43,21 +43,13 @@ public class ProductController {
 	}
 
 	@PostMapping("/add-product")
-	public String addProduct(@Valid Product product, BindingResult bindingResult) {
-		System.out.println("INSIDE addProduct of ProductController ..");
+	public String addProduct(@Valid Product product, BindingResult bindingResult, Model model) {	
 		
-		System.out.println(bindingResult.hasErrors());
-		
-		if (bindingResult.hasErrors()) {
-			
-			// Get list of all errors
-	        List<String> errorMessages = new ArrayList<>();
-	        bindingResult.getFieldErrors().forEach(error -> {
-	            String message = error.getField() + ": " + error.getDefaultMessage();
-	            errorMessages.add(message);
-	        });
-	        errorMessages.forEach(System.out::println);
-			
+		if (bindingResult.hasErrors()) {		
+	        
+	        model.addAttribute("product", product); 
+	        model.addAttribute("errors", bindingResult);	
+	        
 			return "add-product-form"; 
 		}
 
