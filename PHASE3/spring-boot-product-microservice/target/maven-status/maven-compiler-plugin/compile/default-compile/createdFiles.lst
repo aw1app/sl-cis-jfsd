@@ -1,0 +1,4 @@
+com\sl\demo_spring_rest\DemoSpringRestApplication.class
+com\sl\entity\Product.class
+com\sl\repositry\ProductRepositry.class
+com\sl\controller\ProductController.class
