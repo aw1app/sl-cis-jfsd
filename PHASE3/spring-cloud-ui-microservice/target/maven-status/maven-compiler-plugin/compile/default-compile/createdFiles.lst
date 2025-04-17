@@ -1,0 +1,6 @@
+com\sl\config\Config.class
+com\sl\controller\UserProfileController.class
+com\sl\entity\UserProfile.class
+com\sl\entity\Product.class
+com\sl\controller\ProductController.class
+com\sl\SpringBootUiMicroserviceApplication.class
