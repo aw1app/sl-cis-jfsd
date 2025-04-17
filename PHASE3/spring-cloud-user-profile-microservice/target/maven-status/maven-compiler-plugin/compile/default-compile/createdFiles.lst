@@ -1,0 +1,4 @@
+com\sl\controller\UserProfileController.class
+com\sl\entity\UserProfile.class
+com\sl\SpringBootUserProfileMicroserviceApplication.class
+com\sl\repositry\UserProfileRepositry.class
