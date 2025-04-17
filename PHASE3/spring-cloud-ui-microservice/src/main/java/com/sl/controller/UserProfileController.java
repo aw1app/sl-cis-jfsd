@@ -18,7 +18,7 @@ public class UserProfileController {
 	@Autowired
 	RestTemplate restTemplate;
 
-	String userprofileMicroserviceBaseURL = "http://localhost:8081/userprofile";
+	String userprofileMicroserviceBaseURL = "http://user-profile-microservice/userprofile";
 
 	@GetMapping("/details/{id}")
 	public String getDetails(@PathVariable("id") String id, Model model) {

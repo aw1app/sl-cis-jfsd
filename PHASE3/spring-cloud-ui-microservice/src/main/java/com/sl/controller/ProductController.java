@@ -18,7 +18,7 @@ public class ProductController {
 	@Autowired
 	RestTemplate restTemplate;
 
-	String productMicroserviceBaseURL = "http://localhost:8080/products";
+	String productMicroserviceBaseURL = "http://product-microservice/products";
 
 	@GetMapping("/list-products")
 	public String getAllProducts(Model model) {
