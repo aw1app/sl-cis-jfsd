@@ -1,4 +1,4 @@
-version: '3.8'
+version: '3.7'
 services:
   mysql:
     image: mysql:8
@@ -8,16 +8,17 @@ services:
     ports:
       - "3306:3306"
 
-  restaurants:
-    build: ./backend/restaurants
+  restaurant-service:   
+    build: ./backend/restaurant-service
     depends_on:
-      - mysql
+      - mysql:
+        condition: service_healthy
     ports:
-      - "8080:8080"
+      - "8081:8081"
 
-  frontend:
+  frontend:    
     build: ./frontend/my-foodie-app
     depends_on:
-      - restaurants
+      - restaurant-service
     ports:
       - "80:80"
