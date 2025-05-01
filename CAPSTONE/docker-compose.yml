@@ -11,8 +11,7 @@ services:
   restaurant-service:   
     build: ./backend/restaurant-service
     depends_on:
-      - mysql:
-        condition: service_healthy
+      - mysql
     ports:
       - "8081:8081"
 
